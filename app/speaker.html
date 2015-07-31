@@ -3,129 +3,139 @@
 <html>
 
 <head>
-  <title>Speaker</title>
+    <title>Speaker</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
-  <link rel="stylesheet" href="css/default.css" />
-  <style type="text/css">#twitterWidget iframe{margin:0 auto auto !important; display:block !important;} </style>
-  <script src="js/jquery-2.1.4.min.js"></script>
-  <script src="js/jquery.mobile-1.4.5.min.js"></script>
-  <script src="js/twitter.widgets.js"></script>
-    <script src="js/moment.js"></script>
-  <script src="js/default.js"></script>
-  <script src="js/datenmodell.js"></script>
-  <script src="js/stub.js"></script>
-  <script type="text/javascript">
-    var twitterUsername = speaker1.getTwitterUsername();
-    if (!twitterUsername) {
-      function tryCreateTimeline() {
-        if (twttr.widgets) {
-          twttr.widgets.createTimeline(
-            '627087937411354624',
-            document.getElementById('twitterWidget'), {
-              width: 'auto',
-              height: '700',
-              related: 'twitterdev,twitterapi',
-              screenName: twitterUsername
-            }).then(function(el) {
-            console.log("Embedded a timeline.")
-          });
-        } else {
-          setTimeout(tryCreateTimeline, 200);
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/default.css" />
+    <style type="text/css">
+        #twitterWidget iframe {
+            margin: 0 auto auto !important;
+            display: block !important;
         }
-      }
-      tryCreateTimeline();
-    }
-  </script>
+    </style>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/twitter.widgets.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/default.js"></script>
+    <script src="js/datenmodell.js"></script>
+    <script src="js/stub.js"></script>
+    <script type="text/javascript">
+        var twitterUsername = speaker1.getTwitterUsername();
+        if (!twitterUsername) {
+            function tryCreateTimeline() {
+                if (twttr.widgets) {
+                    twttr.widgets.createTimeline(
+                      '627087937411354624',
+                      document.getElementById('twitterWidget'), {
+                          width: 'auto',
+                          height: '700',
+                          related: 'twitterdev,twitterapi',
+                          screenName: twitterUsername
+                      }).then(function (el) {
+                          console.log("Embedded a timeline.")
+                      });
+                } else {
+                    setTimeout(tryCreateTimeline, 200);
+                }
+            }
+            tryCreateTimeline();
+        }
+    </script>
 </head>
 
 <body>
 
-<div data-role="page" id="speakers">
-  <!-- Name des Speakers -->
-  <div class="ui-corner-all custom-corners">
-    <div class="ui-bar ui-bar-a">
-      <h1 id="name"></h1>
-      <script type="text/javascript">
-        document.getElementById("name").innerHTML = speaker1.name;
-      </script>
-    </div>
+    <div data-role="page" id="speakers">
+        <!-- Name des Speakers -->
+        <div class="ui-corner-all custom-corners">
+            <div class="ui-bar ui-bar-a">
+                <h1 id="name"></h1>
+                <script type="text/javascript">
+                    document.getElementById("name").innerHTML = speaker1.name;
+                </script>
+            </div>
 
 
-    <!-- Foto - mittig -->
-    <div class="ui-body ui-body-a">
-      <div style="text-align:center">
-        <img alt="Foto" height="200" width="200" id="personPhoto">
-        <script type="text/javascript">
+            <!-- Foto - mittig -->
+            <div class="ui-body ui-body-a">
+                <div style="text-align:center">
+                    <img alt="Foto" height="200" width="200" id="personPhoto">
+                    <script type="text/javascript">
           $("#personPhoto").attr("src", speaker1.photo);
-        </script>
-      </div>
+                    </script>
+                </div>
 
-      <!--  Position -->
-      <div class="ui-bar ui-bar-a">
-        <p>
-          Position:
-          <span id="position"></span>
-        </p>
-      </div>
+                <!--  Position -->
+                <div class="ui-bar ui-bar-a">
+                    <p>
+                        Position:
+                        <span id="position"></span>
+                    </p>
+                </div>
 
-      <!--  Organisation mit url -->
-      <div class="ui-bar ui-bar-a">
-        <p id="orga">
-          Organisation:
-          <a id="linktext" target="_blank"></a>
-        </p>
-        <script type="text/javascript">
+                <!--  Organisation mit url -->
+                <div class="ui-bar ui-bar-a">
+                    <p id="orga">
+                        Organisation:
+                        <a id="linktext" target="_blank"></a>
+                    </p>
+                    <script type="text/javascript">
           $("#position").text(speaker1.position);
           $("#linktext").text(speaker1.organization);
           $("#orga a").attr("href", speaker1.position);
-        </script>
-      </div>
+                    </script>
+                </div>
 
-      <!-- Biografie -->
-      <div class="ui-body ui-body-b">
-        <h4>Biografie</h4>
-        <p id="bio"></p>
-        <script type="text/javascript">
+                <!-- Biografie -->
+                <div class="ui-body ui-body-b">
+                    <h4>Biografie</h4>
+                    <p id="bio"></p>
+                    <script type="text/javascript">
           document.getElementById("bio").innerHTML = speaker1.biography;
-        </script>
-      </div>
+                    </script>
+                </div>
 
+            </div>
+        </div>
 
+        <div class="ui-corner-all custom-corners distance">
+            <!-- Links -->
+            <!-- Start of the listView page -->
+            <div class="ui-bar ui-bar-a">
+                <h3>Links</h3>
+            </div>
+            <!-- /header -->
 
-      <!-- Links -->
-      <!-- Start of the listView page -->
-      <div class="ui-bar ui-bar-c">
-        <h3>Links</h3>
-      </div>
-      <!-- /header -->
+            <div class="ui-content-a">
 
-      <div class="ui-content-a">
+                <ul id="linkListView" data-role="listview" data-split-icon="gear" data-split-theme="b" data-inset="true"></ul>
 
-        <ul id="linkListView" data-role="listview" data-split-icon="gear" data-split-theme="b" data-inset="true"></ul>
+                <script type="text/javascript" src="js/linkList.js"></script>
+                <script type="text/javascript">attachLinkList(false);</script>
+            </div>
 
-        <script type="text/javascript" src="js/linkList.js"></script>
-        <script type="text/javascript">attachLinkList(false);</script>
-      </div>
+        </div>
 
-      <!-- Sessions -->
-      <!-- Start of the listView page -->
+        <div class="ui-corner-all custom-corners distance">            
+            <!-- Sessions -->
+            <!-- Start of the listView page -->
 
-      <div class="ui-bar ui-bar-d">
-        <h3>Sessions</h3>
-      </div>
-      <!-- /header -->
+            <div class="ui-bar ui-bar-a">
+                <h3>Sessions</h3>
+            </div>
+            <!-- /header -->
 
-      <div class="ui-content-b">
+            <div class="ui-content-b">
 
-        <ul id="sessionListView" data-role="listview" data-split-icon="gear" data-split-theme="b" data-inset="true"></ul>
+                <ul id="sessionListView" data-role="listview" data-split-icon="gear" data-split-theme="b" data-inset="true"></ul>
 
-        <script type="text/javascript" src="js/sessionList.js"></script>
-      </div>
+                <script type="text/javascript" src="js/sessionList.js"></script>
+            </div>
+        </div>
     </div>
-
 </body>
 
 </html>
