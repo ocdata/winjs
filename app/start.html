@@ -13,24 +13,25 @@
     <script src="js/default.js"></script>
 
     <script src="js/datenmodell.js"></script>
+    <script src="js/moment.js"></script>
     <script src="js/stub.js"></script>
+    <script src="js/loader.js"></script>
 </head>
 <body>
 
 <div data-role="page" id="foo">
 
-	<div data-role="header">
-		<h1>Foo</h1>
-	</div><!-- /header -->
+    <div data-role="header">
+        <h1>Sessions</h1>
+    </div><!-- /header -->
 
-	<div role="main" class="ui-content">
-		<p>I'm s first in the source order so I'm shown as the page.</p>
-		<p>View internal page called <a href="#bar">bar</a></p>
-	</div><!-- /content -->
+    <div class="ui-content-b">
 
-	<div data-role="footer">
-		<h4>Page Footer</h4>
-	</div><!-- /footer -->
+        <ul id="sessionListView" data-role="listview" data-split-icon="gear" data-split-theme="b" data-inset="true"></ul>
+
+        <script type="text/javascript" src="js/sessionList.js"></script>
+
+    </div>
 </div><!-- /page -->
 
 <!-- Start of second page -->
@@ -59,10 +60,9 @@
 
     <div role="main" class="ui-content">
 
-        <ul id="personListView" data-role="listview" data-split-icon="gear" data-split-theme="b" data-inset="true">
-        </ul>
-
+        <ul id="personListView" data-role="listview" data-split-icon="gear" data-split-theme="b" data-inset="true"></ul>
         <script type="text/javascript" src="js/personList.js"></script>
+
     </div><!-- /content -->
 
     <div data-role="footer">
