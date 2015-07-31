@@ -418,17 +418,18 @@ function Day(id, labelDe, labelEn, dateStr) {
     }
 }
 
-function Session(id, title, abstract, description, url, begin, end, duration, dayObj, locationObj, formatObj, trackObj, levelObj, languageObj, speakerArray, linkArray) {
+function Session(id, title, abstractStr, description, url, begin, end, duration, sliderShareKey, dayObj, locationObj, formatObj, trackObj, levelObj, languageObj, speakerArray, linkArray) {
 
     // öffentliche Eigenschaft
     this.id = id;
     this.title = title;
-    this.abstract = abstract;
+    this.abstractStr = abstractStr;
     this.description = description;
     this.url = url;
     this.begin = begin;
     this.end = end;
     this.duration = duration;
+    this.sliderShareKey = sliderShareKey;
     this.dayObj = dayObj;
     this.locationObj = locationObj;
     this.formatObj = formatObj;
@@ -456,12 +457,12 @@ function Session(id, title, abstract, description, url, begin, end, duration, da
         return this.title;
     }
 
-    this.setAbstract = function (newAbstract) {
-        this.abstract = newAbstract;
+    this.setAbstractStr = function (newAbstract) {
+        this.abstractStr = newAbstract;
     }
 
-    this.getAbstract = function () {
-        return this.abstract;
+    this.getAbstractStr = function () {
+        return this.abstractStr;
     }
 
     this.setDescription = function (newDescription) {
@@ -503,6 +504,15 @@ function Session(id, title, abstract, description, url, begin, end, duration, da
     this.getDuration = function () {
         return this.duration;
     }
+    
+    this.setSliderShareKey = function (newSliderShareKey) {
+        this.sliderShareKey = newSliderShareKey;
+    }
+
+    this.getSliderShareKey = function () {
+        return this.sliderShareKey;
+    }
+    
 
     this.setDayObj = function (newDayObj) {
         this.dayObj = newDayObj;
