@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="css/default.css" />
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/default.js"></script>
+
+    <script src="js/datenmodell.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/stub.js"></script>
+    <script src="js/loader.js"></script>
+</head>
+<body id="listBegin">
+
+<div data-role="page" id="foo">
+
+    <div data-role="header">
+        <h1>Sessions</h1>
+    </div><!-- /header -->
+
+    <div class="ui-content-b">
+
+        <ul id="sessionListView" data-role="listview" data-split-icon="gear" data-split-theme="b" data-inset="true"></ul>
+
+        <script type="text/javascript" src="js/sessionList.js"></script>
+
+    </div>
+</div><!-- /page -->
+
+<!-- Start of second page -->
+<div data-role="page" id="bar">
+
+	<div data-role="header">
+		<h1>Bar</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>I'm the second in the source order so I'm hidden when the page loads. I'm just shown if a link that references my id is beeing clicked.</p>
+		<p><a href="#foo">Back to foo</a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+<!-- Start of the listView page -->
+<div data-role="page" id="bar">
+
+    <div data-role="header">
+        <h1>Personen</h1>
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content">
+
+        <ul id="personListView" data-role="listview" data-split-icon="gear" data-split-theme="b" data-inset="true"></ul>
+        <script type="text/javascript" src="js/personList.js"></script>
+
+    </div><!-- /content -->
+
+    <div data-role="footer">
+        <h4><a href="#personFavoriten">Favoriten</a></h4>
+    </div><!-- /footer -->
+</div><!-- /page -->
+
+<!-- Start of the listView page -->
+<div data-role="page" id="personFavoriten">
+
+    <div data-role="header">
+        <h1>Personen Favoriten</h1>
+    </div><!-- /header -->
+
+    <ul id="personFavoritenListView" data-role="listview" >
+    </ul>
+
+    <div role="main" class="ui-content">
+
+    </div><!-- /content -->
+
+    <script type="text/javascript" src="js/personFavs.js"></script>
+
+</div><!-- /page -->
+
+
+</body>
+</html>
