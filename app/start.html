@@ -20,7 +20,7 @@
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
-		<p>I'm first in the source order so I'm shown as the page.</p>
+		<p>I'm s first in the source order so I'm shown as the page.</p>
 		<p>View internal page called <a href="#bar">bar</a></p>
 	</div><!-- /content -->
 
@@ -45,6 +45,45 @@
 		<h4>Page Footer</h4>
 	</div><!-- /footer -->
 </div><!-- /page -->
+
+<!-- Start of the listView page -->
+<div data-role="page" id="bar">
+
+    <div data-role="header">
+        <h1>Personen</h1>
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content">
+
+        <ul id="personListView" data-role="listview" >
+        </ul>
+
+        <script type="text/javascript" src="js/personList.js"></script>
+    </div><!-- /content -->
+
+    <div data-role="footer">
+        <h4><a href="#personFavoriten">Favoriten</a></h4>
+    </div><!-- /footer -->
+</div><!-- /page -->
+
+<!-- Start of the listView page -->
+<div data-role="page" id="personFavoriten">
+
+    <div data-role="header">
+        <h1>Personen Favoriten</h1>
+    </div><!-- /header -->
+
+    <ul id="personFavoritenListView" data-role="listview" >
+    </ul>
+
+    <div role="main" class="ui-content">
+
+    </div><!-- /content -->
+
+    <script type="text/javascript" src="js/personFavs.js"></script>
+
+</div><!-- /page -->
+
 
 </body>
 </html>

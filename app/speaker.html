@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Speaker</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/default.css" />
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/default.js"></script>
+    <script src="js/datenmodell.js"></script>
+    <script src="js/stub.js"></script>
+
+</head>
+<body>
+
+
+    <div class="ui-corner-all custom-corners">
+        <div class="ui-bar ui-bar-a">
+            <h3 id="name"></h3>
+            <script>
+                document.getElementById("name").innerHTML = speaker1.name;
+            </script>
+        </div>
+
+        <div src="" class="ui-body ui-body-a">
+
+            <img src="" alt="Foto" height="200" width="200">
+            <script>
+                document.getElementById("link").setAttribute("src", speaker1.photo);
+            </script>
+
+
+
+            <div class="ui-body ui-body-a ui-corner-all">
+                <p>
+                    Position:
+                    <span id="position"></span>
+                </p>
+                <p>
+                    Organisation:
+                    <span id="orga"></span>
+                </p>
+                <p id="orga_url">
+                    <a id="link"></a>
+                </p>
+                <script>
+                    document.getElementById("position").innerHTML = speaker1.position;
+                    document.getElementById("orga").innerHTML = speaker1.organization;
+                    document.getElementById("orga_url").innerHTML = speaker1.organizationUrl;
+                    document.getElementById("link").setAttribute("href", speaker1.organizationUrl);
+                </script>
+            </div>
+
+
+            <div class="ui-body-b">
+                <h4>Biografie</h4>
+                <p id="bio"></p>
+                <script>document.getElementById("bio").innerHTML = speaker1.biography;</script>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
