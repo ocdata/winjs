@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Page Title</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="css/default.css" />
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	<script src="js/default.js"></script>
+</head>
+
+<body>
+	<div id="slideshare" />
+
+	<script type="text/javascript">
+		function createSlideshareTag(key) {
+			if (!key)
+				return "";
+			return '<iframe id="slideshare" src="https://de.slideshare.net/slideshow/embed_code/key/' + key +
+				'" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen/>';
+		}
+		$('#slideshare').append(createSlideshareTag("oVTBqK6ZNhLBZy"));
+	</script>
+</body>
+
+</html>
