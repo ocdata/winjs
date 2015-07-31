@@ -48,15 +48,44 @@ $.each(demoSessionArray, function (index, sessionArrayValue) { //demolinkarray a
 });
 
 //auf Fav klicken
+//$('.fav').click(function(){
+//    var sessionIdAndName = $(this).attr('id');
+//
+////    if(!$.cookie("favArray").empty()){
+//        var favs = [
+//            { 'name' : 'Abel', 'age' : 1 },
+//            { 'name' : 'Bella', 'age' : 2 },
+//            { 'name' : 'Chad', 'age' : 3 },
+//        ];
+//    Cookies.set("favArray", JSON.stringify(favs));
+////    }
+//});
+
+var addNewFav = function (fav) {
+    // holen und befüllen oder neues erstellen
+    var favSessions = JSON.parse(localStorage.getItem('favoriteSessions')) || [];
+
+    favSessions.push({sessions: fav});
+    // zurückschreiben
+    localStorage.setItem('favoriteSessions', JSON.stringify(favSessions));
+}
+
+
+
 $('.fav').click(function(){
+    alert("test");
+    //use HTML5 LocalStorage
     var sessionIdAndName = $(this).attr('id');
 
-//    if(!$.cookie("favArray").empty()){
-        var favs = [
-            { 'name' : 'Abel', 'age' : 1 },
-            { 'name' : 'Bella', 'age' : 2 },
-            { 'name' : 'Chad', 'age' : 3 },
-        ];
-    Cookies.set("favArray", JSON.stringify(favs));
-//    }
+    addNewFav(sessionIdAndName);
+
 });
+// Check browser support
+//if (typeof(Storage) != "undefined") {
+//    // Store
+//    localStorage.setItem("lastname", "Smith");
+//    // Retrieve
+//    document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+//    } else {
+//    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+//    }
