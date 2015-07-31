@@ -4,7 +4,7 @@
 	"use strict";
 
 	var app = WinJS.Application;
-	var activation = Windows.ApplicationModel.Activation;
+	//var activation = Windows.ApplicationModel.Activation;
 
 	app.onactivated = function (args) {
 		if (args.detail.kind === activation.ActivationKind.launch) {
@@ -26,3 +26,8 @@
 
 	app.start();
 })();
+
+WinJS.UI.processAll().done(function () {
+    var splitView = document.querySelector(".splitView").winControl;
+    WinJS.UI._WinKeyboard(splitView.paneElement); // Temporary workaround: Draw keyboard focus visuals on NavBarCommands
+});
