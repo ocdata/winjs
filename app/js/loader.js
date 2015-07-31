@@ -223,13 +223,13 @@ function parseData(data) {
 	try{
 		// Datenarray holen
 		var dataArray = data.speakers;
-		
+
 		for (var int = 0; int < dataArray.length; int++) {
 			var itemData = dataArray[int];
-			
+
 			// ID muss immer da sein!
 			var id = itemData.id;
-			
+
 			// optionale Parameter
 			var name = "";
 			var photo = "";
@@ -239,74 +239,75 @@ function parseData(data) {
 			var organizationUrl = "";
 			var position = "";
 			var linkArray = new Array();
-			
-			
+
+
 			if(itemData.hasOwnProperty("name")){
 				name = itemData.name;
 			}
-			
+
 			if(itemData.hasOwnProperty("photo")){
 				photo = itemData.photo;
 			}
-			
+
 			if(itemData.hasOwnProperty("url")){
 				url = itemData.url;
 			}
-			
+
 			if(itemData.hasOwnProperty("biography")){
 				biography = itemData.biography;
 			}
-			
+
 			if(itemData.hasOwnProperty("organization")){
 				organization = itemData.organization;
 			}
-			
+
 			if(itemData.hasOwnProperty("organization_url")){
 				organizationUrl = itemData.organization_url;
 			}
-			
+
 			if(itemData.hasOwnProperty("position")){
 				position = itemData.position;
 			}
-			
+
 			if(itemData.hasOwnProperty("links")){
-				
+
 				for (var int2 = 0; int2 < itemData.links.length; int2++) {
 					var linkData = itemData.links[int2];
-					
+
 					var linkUrl = "";
 					var linkTitle = "";
 					var linkService = "";
 					var linkType = "";
-					
+
 					if(linkData.hasOwnProperty("url")){
 						linkUrl = linkData.url;
 					}
-					
+
 					if(linkData.hasOwnProperty("title")){
 						linkTitle = linkData.title;
 					}
-					
+
 					if(linkData.hasOwnProperty("service")){
 						linkService = linkData.service;
 					}
-					
+
 					if(linkData.hasOwnProperty("type")){
 						linkType = linkData.type;
 					}
-					
+
 					linkArray.push(new Link(linkUrl, linkTitle, linkService, linkType));
 				}
 			}
-			
+
 			konfModel.getSpeakerArray().push(new Speaker(id, name, photo, url, biography, organization, organizationUrl, position, linkArray));
-		}		
+		}
 	}catch (e) {
 		// TODO: handle exception
 		alert(e);
 	}
-	
-	
 
+
+    //TODO: nicht direkt in Methode aufrufen sondern sequenziell?
+    genSpeaker();
 }
 

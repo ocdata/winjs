@@ -15,3 +15,9 @@ div.personPhoto {
     height: 106px;
     width: 100px;
 }
+
+
+.ui-content {
+    overflow: scroll;
+    height: 87%;
+}
