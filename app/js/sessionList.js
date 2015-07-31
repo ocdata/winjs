@@ -26,7 +26,7 @@ $.each(demoSessionArray, function (index, sessionArrayValue) { //demolinkarray a
 
     var sessionPageLink = id + title;
     sessionPageLink = sessionPageLink.replace(/\s+/g, '');
-    
+
     //listview population
     $("#sessionListView").append('<li>' +
         '<a href="#' + sessionPageLink + '" class="">' +
