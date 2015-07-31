@@ -33,13 +33,13 @@ function Format(id, labelDe, labelEn) {
     }
 }
 
-function Link(url, title, service) {
+function Link(url, title, service, type) {
 
     // öffentliche Eigenschaft
     this.url = url;
     this.title = title;
     this.service = service;
-    this.type = "Speaker-Type";
+    this.type = type;
 
     // privilegierte öffentliche Methoden
     this.setUrl = function (newUrl) {
