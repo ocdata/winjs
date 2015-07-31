@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>02b613c1-b3f6-41a7-b248-60b8860c6734</SharedGUID>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)js\default.js" />
+    <Content Include="$(MSBuildThisFileDirectory)js\user.js" />
+    <Content Include="$(MSBuildThisFileDirectory)winjs\css\ui-dark.css" />
+    <Content Include="$(MSBuildThisFileDirectory)winjs\css\ui-dark.min.css" />
+    <Content Include="$(MSBuildThisFileDirectory)winjs\css\ui-light.css" />
+    <Content Include="$(MSBuildThisFileDirectory)winjs\css\ui-light.min.css" />
+    <Content Include="$(MSBuildThisFileDirectory)winjs\fonts\Symbols.ttf" />
+    <Content Include="$(MSBuildThisFileDirectory)winjs\js\base.js" />
+    <Content Include="$(MSBuildThisFileDirectory)winjs\js\base.min.js" />
+    <Content Include="$(MSBuildThisFileDirectory)winjs\js\base.min.js.map" />
+    <Content Include="$(MSBuildThisFileDirectory)winjs\js\en-US\ui.strings.js" />
+    <Content Include="$(MSBuildThisFileDirectory)winjs\js\ui.js" />
+    <Content Include="$(MSBuildThisFileDirectory)winjs\js\ui.min.js" />
+    <Content Include="$(MSBuildThisFileDirectory)winjs\js\ui.min.js.map" />
+    <Content Include="$(MSBuildThisFileDirectory)winjs\js\WinJS.intellisense-setup.js" />
+    <Content Include="$(MSBuildThisFileDirectory)winjs\js\WinJS.intellisense.js" />
+    <Content Include="$(MSBuildThisFileDirectory)winjs\License.txt" />
+    <Content Include="$(MSBuildThisFileDirectory)winjs\package.json" />
+    <Content Include="$(MSBuildThisFileDirectory)winjs\README.md" />
+  </ItemGroup>
+</Project>
