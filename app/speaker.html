@@ -20,7 +20,7 @@
     <div class="ui-corner-all custom-corners">
         <div class="ui-bar ui-bar-a">
             <h1 id="name"></h1>
-            <script>
+            <script type="text/javascript">
                 document.getElementById("name").innerHTML = speaker1.name;
             </script>
         </div>
@@ -30,7 +30,7 @@
         <div class="ui-body ui-body-a" id="">
             <div style="text-align:center">
                 <img alt="Foto" height="200" width="200" id="personPhoto">
-                <script>
+                <script type="text/javascript">
                     $("#personPhoto").attr("src", speaker1.photo);
                 </script>
             </div>
@@ -50,12 +50,11 @@
 
                     <a id="linktext" target="_blank"></a>
                 </p>
-                <script>
+                <script type="text/javascript">
                     $("#position").text(speaker1.position);
                     $("#linktext").text(speaker1.organization);
                     $("#orga a").attr("href", speaker1.position); document.getElementById("link").setAttribute("href",
 speaker1.organizationUrl);
-
                 </script>
             </div>
 
@@ -63,14 +62,20 @@ speaker1.organizationUrl);
             <div class="ui-body ui-body-b">
                 <h4>Biografie</h4>
                 <p id="bio"></p>
-                <script>document.getElementById("bio").innerHTML = speaker1.biography;</script>
+                <script type="text/javascript">document.getElementById("bio").innerHTML = speaker1.biography;</script>
             </div>
         </div>
     </div>
 
+    <!-- Links -->
+    <!-- Start of the listView page -->
+
+
+    <ul id="linkListView" data-role="listview" data-split-icon="gear" data-split-theme="b" data-inset="true"></ul>
+
+    <script type="text/javascript" src="js/linkList.js"></script>
+    
     <!-- Sessions -->
-
-
     <!-- Twitter-->
     <div>
 
