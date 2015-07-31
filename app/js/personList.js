@@ -1,7 +1,6 @@
 //Für jede Person wird eine neue Page Detailseite angelegt
 //var personArray = ["Person1", "Person2", "Person3", "Person4"];
 
-
 //setTimeout(function(){
 //    speakerArray = konfModel.getSpeakerArray();
 //    genSpeaker(speakerArray);

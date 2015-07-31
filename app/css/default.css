@@ -8,9 +8,15 @@
     border-bottom-right-radius: inherit;
     border-top-width: 0;
 }
-div.linktext {
+
+.distance {
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+﻿ div.linktext {
     font-size: 20px;
 }
+
 div.speakerString {
     font-size: 12px;
     margin-bottom: 14px;
