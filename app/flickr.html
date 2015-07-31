@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Flickr</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/js-flickr-gallery.css" />
+  <style type="text/css">
+    .span1 {width:auto;}
+    .pagination {text-align: center;}
+    .thumbnail {padding: auto; margin: auto;}
+  </style>
+  <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="js/js-flickr-gallery.js"></script>
+
+</head>
+
+<body>
+  <div id="gallery" class="js-flickr-gallery"></div>
+  <script type="text/javascript">
+    var options = {
+      "url": {
+        "user_id": "truecolour"
+      }
+    };
+    $("#gallery").jsFlickrGallery(options)
+  </script>
+</body>
+
+</html>
