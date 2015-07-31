@@ -48,7 +48,7 @@ function genSpeaker(){
             '<div style="background-image: url(' + personPhoto + ')" class="personPhoto"></div>' +
             '<div class="personText">'+ personName + ' (' + personPosition + ')<br />' + personFirma + '</div>' +
             '</a>' +
-            '<a href="#test"></a></li>'); //<img src="' + personPhoto + '">
+            '<a href="#fav"></a></li>'); //<img src="' + personPhoto + '">
     });
 
     $("#personListView").listview( "refresh" );
