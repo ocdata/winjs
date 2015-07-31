@@ -25,8 +25,8 @@ var demoSpeakerArray = new Array();
 demoSpeakerArray.push(speaker1);
 demoSpeakerArray.push(speaker2);
 
-var link1 = new Link("https://twitter.com/SpartaTeam", "Twitter", "twitter", "");
-var link2 = new Link("https://ocdata.github.io/", "Homepage", "web", "");
+var link1 = new Link("https://twitter.com/SpartaTeam", "Twitter", "twitter", "", "SpartaTeam");
+var link2 = new Link("https://ocdata.github.io/", "Homepage", "web", "", "");
 
 var demoLinkArray = new Array();
 demoLinkArray.push(link1);

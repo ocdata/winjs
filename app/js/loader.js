@@ -278,6 +278,7 @@ function parseData(data) {
 					var linkTitle = "";
 					var linkService = "";
 					var linkType = "";
+					var linkUsername = "";
 					
 					if(linkData.hasOwnProperty("url")){
 						linkUrl = linkData.url;
@@ -295,7 +296,11 @@ function parseData(data) {
 						linkType = linkData.type;
 					}
 					
-					linkArray.push(new Link(linkUrl, linkTitle, linkService, linkType));
+					if(linkData.hasOwnProperty("username")){
+						linkUsername = linkData.username;
+					}
+					
+					linkArray.push(new Link(linkUrl, linkTitle, linkService, linkType, linkUsername));
 				}
 			}
 			
@@ -379,6 +384,7 @@ function parseData(data) {
 					var linkTitle = "";
 					var linkService = "";
 					var linkType = "";
+					var linkUsername = "";
 					
 					if(linkData.hasOwnProperty("url")){
 						linkUrl = linkData.url;
@@ -396,7 +402,11 @@ function parseData(data) {
 						linkType = linkData.type;
 					}
 					
-					linkArray.push(new Link(linkUrl, linkTitle, linkService, linkType));
+					if(linkData.hasOwnProperty("username")){
+						linkUsername = linkData.username;
+					}
+					
+					linkArray.push(new Link(linkUrl, linkTitle, linkService, linkType, linkUsername));
 				}
 			}
 			
