@@ -1,18 +1,40 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Speaker</title>
+  <title>Speaker</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
-    <link rel="stylesheet" href="css/default.css" />
-    <script src="js/jquery-2.1.4.min.js"></script>
-    <script src="js/jquery.mobile-1.4.5.min.js"></script>
-    <script src="js/default.js"></script>
-    <script src="js/datenmodell.js"></script>
-    <script src="js/stub.js"></script>
-
+  <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+  <link rel="stylesheet" href="css/default.css" />
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/jquery.mobile-1.4.5.min.js"></script>
+  <script src="js/twitter.widgets.js"></script>
+  <script src="js/default.js"></script>
+  <script src="js/datenmodell.js"></script>
+  <script src="js/stub.js"></script>
+  <script type="text/javascript">
+    var twitterUsername = speaker1.getTwitterUsername();
+    if (!twitterUsername) {
+      function tryCreateTimeline() {
+        if (twttr.widgets) {
+          twttr.widgets.createTimeline(
+            '627087937411354624',
+            document.getElementById('twitterWidget'), {
+              width: '450',
+              height: '700',
+              related: 'twitterdev,twitterapi',
+              screenName: twitterUsername
+            }).then(function(el) {
+            console.log("Embedded a timeline.")
+          });
+        } else {
+          setTimeout(tryCreateTimeline, 200);
+        }
+      }
+      tryCreateTimeline();
+    }
+  </script>
 </head>
 <body>
 
@@ -74,11 +96,10 @@ speaker1.organizationUrl);
     <ul id="linkListView" data-role="listview" data-split-icon="gear" data-split-theme="b" data-inset="true"></ul>
 
     <script type="text/javascript" src="js/linkList.js"></script>
-    
+
     <!-- Sessions -->
     <!-- Twitter-->
-    <div>
-
+    <div id='twitterWidget'>
     </div>
 
 </body>
