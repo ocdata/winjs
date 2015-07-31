@@ -1,3 +1,51 @@
+function Konferenz() {
+	
+    // öffentliche Eigenschaft
+    this.formatArray = new Array();
+    this.dayArray = new Array();
+    this.languageArray = new Array();
+    this.levelArray = new Array();
+    this.locationArray = new Array();
+    this.sessionArray = new Array();
+    this.speakerArray = new Array();
+    this.trackArray = new Array();
+
+
+    // privilegierte öffentliche Methoden
+    this.getFormatArray = function () {
+        return this.formatArray;
+    }
+    
+    this.getDayArray = function () {
+        return this.dayArray;
+    }
+    
+    this.getLanguageArray = function () {
+        return this.languageArray;
+    }
+    
+    this.getLevelArray = function () {
+        return this.levelArray;
+    }
+    
+    this.getLocationArray = function () {
+        return this.locationArray;
+    }
+    
+    this.getSessionArray = function () {
+        return this.sessionArray;
+    }
+    
+    this.getSpeakerArray = function () {
+        return this.speakerArray;
+    }
+    
+    this.getTrackArray = function () {
+        return this.trackArray;
+    }
+
+}
+
 
 function Format(id, labelDe, labelEn) {
 
@@ -33,13 +81,13 @@ function Format(id, labelDe, labelEn) {
     }
 }
 
-function Link(url, title, service) {
+function Link(url, title, service, type) {
 
     // öffentliche Eigenschaft
     this.url = url;
     this.title = title;
     this.service = service;
-    this.type = "Speaker-Type";
+    this.type = type;
 
     // privilegierte öffentliche Methoden
     this.setUrl = function (newUrl) {
@@ -75,7 +123,7 @@ function Link(url, title, service) {
     }
 }
 
-function Speaker(id, name, photo, url, biography, organization, organizationUrl, position, linkObj) {
+function Speaker(id, name, photo, url, biography, organization, organizationUrl, position, linkArray) {
 
     // öffentliche Eigenschaft
     this.id = id;
@@ -86,7 +134,7 @@ function Speaker(id, name, photo, url, biography, organization, organizationUrl,
     this.organization = organization;
     this.organizationUrl = organizationUrl;
     this.position = position;
-    this.link = linkObj;
+    this.linkArray = linkArray;
 
     // privilegierte öffentliche Methoden
     this.setId = function (newId) {
@@ -153,12 +201,12 @@ function Speaker(id, name, photo, url, biography, organization, organizationUrl,
         return this.position;
     }
 
-    this.setLink = function (newLink) {
-        this.link = newLink;
+    this.setLinkArray = function (newLinkArray) {
+        this.linkArray = newLinkArray;
     }
 
-    this.getLink = function () {
-        return this.link;
+    this.getLinkArray = function () {
+        return this.linkArray;
     }
 }
 
