@@ -9,6 +9,7 @@
 
   <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
   <link rel="stylesheet" href="css/default.css" />
+  <style type="text/css">#twitterWidget iframe{margin:0 auto auto !important; display:block !important;} </style>
   <script src="js/jquery-2.1.4.min.js"></script>
   <script src="js/jquery.mobile-1.4.5.min.js"></script>
   <script src="js/twitter.widgets.js"></script>
@@ -24,7 +25,7 @@
           twttr.widgets.createTimeline(
             '627087937411354624',
             document.getElementById('twitterWidget'), {
-              width: '450',
+              width: 'auto',
               height: '700',
               related: 'twitterdev,twitterapi',
               screenName: twitterUsername
@@ -121,10 +122,6 @@
         <ul id="sessionListView" data-role="listview" data-split-icon="gear" data-split-theme="b" data-inset="true"></ul>
 
         <script type="text/javascript" src="js/sessionList.js"></script>
-      </div>
-
-      <!-- Twitter-->
-      <div id='twitterWidget'>
       </div>
     </div>
 
