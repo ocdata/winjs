@@ -15,11 +15,14 @@
 
 var speakerArray = null;
 function genSpeaker(){
-    speakerArray = konfModel.getSpeakerArray();
-//    var speakerArray = demoSpeakerArray;
+//    speakerArray = konfModel.getSpeakerArray();
+    var speakerArray = demoSpeakerArray;
+
+//    var speaker = $( "#result" ).load( "speaker.html", function() {
+//        alert( "Load was performed." );
+//    });
 
     $.each(speakerArray, function( index, personArrayValue ) { //demoSpeakerArray aus stub.js
-
         var personId = personArrayValue.id;
         var personName = personArrayValue.getName();
         var personFirma = personArrayValue.getOrganization();
@@ -29,9 +32,15 @@ function genSpeaker(){
         var pageLink = personId + personName;
         pageLink = pageLink.replace(/\s+/g, '');
 
+//        $.get("speaker.html", function(data){
+//            $(this).children("body").html(data);
+//        });
+
+
         //Detailseiten anlegen
         $("body").append('<div data-role="page" id="' + pageLink + '">' +
-            '<div data-role="header"><h1>' + personName + ' (' + personPosition + ')</h1></div>');
+            '<div data-role="header"><h1>' + personName + ' (' + personPosition + ')</h1>' +
+            '</div>');
 
         //ListView population
         $("#personListView").append('<li>' +
@@ -41,8 +50,6 @@ function genSpeaker(){
             '</a>' +
             '<a href="#test"></a></li>'); //<img src="' + personPhoto + '">
     });
-
-
 
     $("#personListView").listview( "refresh" );
 }
