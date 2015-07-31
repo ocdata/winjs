@@ -2,13 +2,27 @@ var konfModel = null;
 //initModel();
 
 function initModel() {
+	// loading anzeigen
+	$.mobile.loading("show", {
+		text : "laden...",
+		textVisible : true,
+		textonly : false,
+		html : ""
+	});
+
 	$.ajax({
-		   url: "http://rp.axxg.org/2015/testData.php",
-		   dataType: "json",
-		   data: {},
-		   type: "GET",
-		   success: function(data) { parseData(data); }
-		});		
+		url : "http://rp.axxg.org/2015/testData.php",
+		dataType : "json",
+		data : {},
+		type : "GET",
+		success : function(data) {
+			parseData(data);
+		}
+	}).done(function() {
+		$.mobile.loading("hide");
+	});
+
+	
 }
 
 function parseData(data) {
@@ -531,20 +545,22 @@ function parseData(data) {
 		alert(e);
 	}
 	
-	/*
+	//Seite vorab aufbauen fuer schnelle Navigation und co!
+	extendPages();
 	
-	alert("Tag:" + konfModel.getDayArray().length +
-			"Format:" + konfModel.getFormatArray().length +
-			"Lang:" + konfModel.getLanguageArray().length +
-			"Level:" + konfModel.getLevelArray().length +
-			"Loc:" + konfModel.getLocationArray().length +
-			"Track:" + konfModel.getTrackArray().length +
-			"Speaker:" + konfModel.getSpeakerArray().length +
-			"Session:" + konfModel.getSessionArray().length);
+	// Seite wechseln
+	$( ":mobile-pagecontainer" ).pagecontainer( "change", $("#dashboardPage"));
+}
+
+function extendPages(){
+	// SessionBar aufbauen
+	for (var int = 0; int < konfModel.getDayArray().length; int++) {
+		var day = konfModel.getDayArray()[int];
+		$("#SessionBar").append('<li><a href="#">' + day.getLabelDe() + '</a></li>');
+		
+		
+	}
 	
-	//alert(konfModel.getSessionArray()[0].getId());
-	
-	*/
 }
 
 function SortSession(a, b){
