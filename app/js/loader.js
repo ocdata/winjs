@@ -545,11 +545,71 @@ function parseData(data) {
 	//alert(konfModel.getSessionArray()[0].getId());
 	
 	*/
-	
-	
-
-
-    //TODO: nicht direkt in Methode aufrufen sondern sequenziell?
-    genSpeaker();
 }
+
+function SortSession(a, b){
+	
+	// erst nach Zeit
+	// zeit sollte immer da sein!
+	var beginA = moment(a.getBegin());
+	var beginB = moment(b.getBegin());
+	
+	if(beginA.isBefore(beginB)){
+		return -1;
+	}
+	
+	if(beginA.isAfter(beginB)){
+		return 1;
+	}
+	
+	// Zeit ist gleich, dann nach location gehen!
+	if(a.getLocationObj() == null){
+		return 1;
+	}
+	
+	if(b.getLocationObj() == null){
+		return -1;
+	}
+	
+	// location ist da
+	if(a.getLocationObj().getOrderIndex() > b.getLocationObj().getOrderIndex()){
+		return 1;
+	}
+	
+	if(a.getLocationObj().getOrderIndex() < b.getLocationObj().getOrderIndex()){
+		return -1;
+	}
+	
+	// sonst
+	return 0;
+}
+
+function getSessionsByDay(day) {
+	var ergArray = new Array();
+	
+	// Session des Tages bestimmen
+	for (var int = 0; int < konfModel.getSessionArray().length; int++) {
+		var session = konfModel.getSessionArray()[int];
+		
+		if(test.getDayObj().getId() == day.getId()){
+			ergArray.push(session);			
+		}
+	}
+	
+	// zeitlich sortieren
+	ergArray.sort(SortSession);
+	
+	return ergArray;
+}
+
+
+demoSessionArray.sort(SortSession);
+
+var str = "";
+for (var int = 0; int < demoSessionArray.length; int++) {
+	var session = demoSessionArray[int];
+	str = str + session.getId()+ "->" + moment(session.getBegin()).format("HH:mm") + "; ";
+}
+//alert(str);
+
 

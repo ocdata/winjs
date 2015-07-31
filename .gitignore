@@ -154,3 +154,7 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
+app/.project
+app/.settings/.jsdtscope
+app/.settings/org.eclipse.wst.jsdt.ui.superType.container
+app/.settings/org.eclipse.wst.jsdt.ui.superType.name

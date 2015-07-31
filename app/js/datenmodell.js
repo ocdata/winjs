@@ -639,36 +639,6 @@ function Position(mapObj, x, y) {
     }
 }
 
-function Location(id, labelDe, labelEn) {
-    this.id = id;
-    this.labelDe = labelDe;
-    this.labelEn = labelEn;
-
-    this.setId = function (newId) {
-        this.id = newId;
-    }
-
-    this.getId = function () {
-        return this.Id;
-    }
-
-    this.setLabelDe = function (newLabelDe) {
-        this.labelDe = newLabelDe;
-    }
-
-    this.getLabelDe = function () {
-        return this.labelDe;
-    }
-
-    this.setLabelEn = function (newLabelEn) {
-        this.labelDe = newLabelDe;
-    }
-
-    this.getLabelEn = function () {
-        return this.labelEn;
-    }
-}
-
 function Pois(id, labelEn, labelDe, category, positionObj, hidden, priority, locationObj) {
 
     // öffentliche Eigenschaft
