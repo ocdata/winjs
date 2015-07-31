@@ -1,5 +1,5 @@
 var konfModel = null;
-initModel();
+//initModel();
 
 function initModel() {
 	$.ajax({
@@ -601,15 +601,5 @@ function getSessionsByDay(day) {
 	
 	return ergArray;
 }
-
-
-demoSessionArray.sort(SortSession);
-
-var str = "";
-for (var int = 0; int < demoSessionArray.length; int++) {
-	var session = demoSessionArray[int];
-	str = str + session.getId()+ "->" + moment(session.getBegin()).format("HH:mm") + "; ";
-}
-//alert(str);
 
 

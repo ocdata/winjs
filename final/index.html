@@ -39,7 +39,31 @@
 </head>
 <body>
 
+<!-- Start of first page -->
+<div data-role="page" id="loadingPage">
+
+	<div role="main" class="ui-content">
+		<img alt="loading" src="images/load.jpg" style="width: 100%; height: 100%">
+	</div><!-- /content -->
 
 
+</div><!-- /page -->
+
+<!-- Start of second page -->
+<div data-role="page" id="bar">
+
+	<div data-role="header">
+		<h1>Bar</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>I'm the second in the source order so I'm hidden when the page loads. I'm just shown if a link that references my id is beeing clicked.</p>
+		<p><a href="#foo">Back to foo</a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
 </body>
 </html>
