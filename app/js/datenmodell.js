@@ -81,12 +81,13 @@ function Format(id, labelDe, labelEn) {
     }
 }
 
-function Link(url, title, service, type) {
+function Link(url, title, service, type, username) {
 
     // öffentliche Eigenschaft
     this.url = url;
     this.title = title;
     this.service = service;
+    this.username = username;
     this.type = type;
 
     // privilegierte öffentliche Methoden
@@ -120,6 +121,14 @@ function Link(url, title, service, type) {
 
     this.getType = function () {
         return this.type;
+    }
+    
+    this.setUsername = function (newUsername) {
+        this.username = newUsername;
+    }
+
+    this.getUsername = function () {
+        return this.username;
     }
 }
 
@@ -433,7 +442,7 @@ function Day(id, labelDe, labelEn, dateStr) {
     }
 }
 
-function Session(id, title, abstractStr, description, url, begin, end, duration, dayObj, locationObj, formatObj, trackObj, levelObj, languageObj, speakerArray, linkArray) {
+function Session(id, title, abstractStr, description, url, begin, end, duration, sliderShareKey, dayObj, locationObj, formatObj, trackObj, levelObj, languageObj, speakerArray, linkArray) {
 
     // öffentliche Eigenschaft
     this.id = id;
@@ -444,6 +453,7 @@ function Session(id, title, abstractStr, description, url, begin, end, duration,
     this.begin = begin;
     this.end = end;
     this.duration = duration;
+    this.sliderShareKey = sliderShareKey;
     this.dayObj = dayObj;
     this.locationObj = locationObj;
     this.formatObj = formatObj;
@@ -518,6 +528,15 @@ function Session(id, title, abstractStr, description, url, begin, end, duration,
     this.getDuration = function () {
         return this.duration;
     }
+    
+    this.setSliderShareKey = function (newSliderShareKey) {
+        this.sliderShareKey = newSliderShareKey;
+    }
+
+    this.getSliderShareKey = function () {
+        return this.sliderShareKey;
+    }
+    
 
     this.setDayObj = function (newDayObj) {
         this.dayObj = newDayObj;

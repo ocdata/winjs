@@ -278,6 +278,7 @@ function parseData(data) {
 					var linkTitle = "";
 					var linkService = "";
 					var linkType = "";
+					var linkUsername = "";
 					
 					if(linkData.hasOwnProperty("url")){
 						linkUrl = linkData.url;
@@ -295,7 +296,11 @@ function parseData(data) {
 						linkType = linkData.type;
 					}
 					
-					linkArray.push(new Link(linkUrl, linkTitle, linkService, linkType));
+					if(linkData.hasOwnProperty("username")){
+						linkUsername = linkData.username;
+					}
+					
+					linkArray.push(new Link(linkUrl, linkTitle, linkService, linkType, linkUsername));
 				}
 			}
 			
@@ -325,6 +330,7 @@ function parseData(data) {
 			var begin = "";
 			var end = "";
 			var duration = 0;
+			var sliderShareKey = "";
 			
 			var dayObj = null;
 			var locationObj = null;
@@ -365,6 +371,10 @@ function parseData(data) {
 				duration = itemData.duration;
 			}
 			
+			if(itemData.hasOwnProperty("sliderShareKey")){
+				sliderShareKey = itemData.sliderShareKey;
+			}
+			
 			if(itemData.hasOwnProperty("links")){
 				
 				for (var int2 = 0; int2 < itemData.links.length; int2++) {
@@ -374,6 +384,7 @@ function parseData(data) {
 					var linkTitle = "";
 					var linkService = "";
 					var linkType = "";
+					var linkUsername = "";
 					
 					if(linkData.hasOwnProperty("url")){
 						linkUrl = linkData.url;
@@ -391,7 +402,11 @@ function parseData(data) {
 						linkType = linkData.type;
 					}
 					
-					linkArray.push(new Link(linkUrl, linkTitle, linkService, linkType));
+					if(linkData.hasOwnProperty("username")){
+						linkUsername = linkData.username;
+					}
+					
+					linkArray.push(new Link(linkUrl, linkTitle, linkService, linkType, linkUsername));
 				}
 			}
 			
@@ -509,7 +524,7 @@ function parseData(data) {
 			}
 			
 			
-			konfModel.getSessionArray().push(new Session(id, title, abstractStr, description, url, begin, end, duration, dayObj, locationObj, formatObj, trackObj, levelObj, languageObj, speakerArray, linkArray));
+			konfModel.getSessionArray().push(new Session(id, title, abstractStr, description, url, begin, end, duration, sliderShareKey, dayObj, locationObj, formatObj, trackObj, levelObj, languageObj, speakerArray, linkArray));
 		}		
 	}catch (e) {
 		// TODO: handle exception
