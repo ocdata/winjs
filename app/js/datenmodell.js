@@ -81,12 +81,13 @@ function Format(id, labelDe, labelEn) {
     }
 }
 
-function Link(url, title, service, type) {
+function Link(url, title, service, type, username) {
 
     // öffentliche Eigenschaft
     this.url = url;
     this.title = title;
     this.service = service;
+    this.username = username;
     this.type = type;
 
     // privilegierte öffentliche Methoden
@@ -120,6 +121,14 @@ function Link(url, title, service, type) {
 
     this.getType = function () {
         return this.type;
+    }
+    
+    this.setUsername = function (newUsername) {
+        this.username = newUsername;
+    }
+
+    this.getUsername = function () {
+        return this.username;
     }
 }
 

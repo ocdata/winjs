@@ -27,7 +27,7 @@
 
 
         <!-- Foto - mittig -->
-        <div class="ui-body ui-body-a" id="">
+        <div class="ui-body ui-body-a">
             <div style="text-align:center">
                 <img alt="Foto" height="200" width="200" id="personPhoto">
                 <script type="text/javascript">
@@ -47,14 +47,12 @@
             <div class="ui-bar ui-bar-a">
                 <p id="orga">
                     Organisation:
-
                     <a id="linktext" target="_blank"></a>
                 </p>
                 <script type="text/javascript">
                     $("#position").text(speaker1.position);
                     $("#linktext").text(speaker1.organization);
-                    $("#orga a").attr("href", speaker1.position); document.getElementById("link").setAttribute("href",
-speaker1.organizationUrl);
+                    $("#orga a").attr("href", speaker1.position); 
                 </script>
             </div>
 
@@ -64,21 +62,38 @@ speaker1.organizationUrl);
                 <p id="bio"></p>
                 <script type="text/javascript">document.getElementById("bio").innerHTML = speaker1.biography;</script>
             </div>
+
+
+
+            <!-- Links -->
+            <!-- Start of the listView page -->
+            <div class="ui-bar ui-bar-c">
+                <h3>Links</h3>
+            </div><!-- /header -->
+
+            <div class="ui-content-a">
+
+                <ul id="linkListView" data-role="listview" data-split-icon="gear" data-split-theme="b" data-inset="true"></ul>
+
+                <script type="text/javascript" src="js/linkList.js"></script>
+            </div>
+
+            <!-- Sessions -->
+            <!-- Start of the listView page -->
+            
+            <div class="ui-bar ui-bar-d">
+                <h3>Sessions</h3>
+            </div><!-- /header -->
+
+            <div class="ui-content-b">
+
+                <ul id="sessionListView" data-role="listview" data-split-icon="gear" data-split-theme="b" data-inset="true"></ul>
+
+                <script type="text/javascript" src="js/sessionList.js"></script>
+            </div>
+           
+            <!-- Twitter-->
         </div>
-    </div>
-
-    <!-- Links -->
-    <!-- Start of the listView page -->
-
-
-    <ul id="linkListView" data-role="listview" data-split-icon="gear" data-split-theme="b" data-inset="true"></ul>
-
-    <script type="text/javascript" src="js/linkList.js"></script>
-    
-    <!-- Sessions -->
-    <!-- Twitter-->
-    <div>
-
     </div>
 
 </body>
