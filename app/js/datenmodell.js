@@ -557,7 +557,7 @@ function Position(mapObj, x, y) {
     }
 }
 
-function Location(id, labelDE, labelEn) {
+function Location(id, labelDe, labelEn) {
     this.id = id;
     this.labelDe = labelDe;
     this.labelEn = labelEn;
