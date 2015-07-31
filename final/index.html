@@ -1,92 +1,44 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-	<title>Page Title</title>
 
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Die universale KonferenzApp">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>KonferenzApp</title>
 
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="32x32" href="images/favicon.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="KonferenzApp">
+    <link rel="apple-touch-icon-precomposed" href="images/favicon.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/favicon.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+	<!-- stylesheet -->
 	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
 	<link rel="stylesheet" href="css/default.css" />
+	
+	
+	<!-- Js -->
 	<script src="js/jquery-2.1.4.min.js"></script>
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
-    <script src="js/default.js"></script>
-
-    <script src="js/datenmodell.js"></script>
     <script src="js/moment.js"></script>
-    <script src="js/stub.js"></script>
+    
+    <script src="js/datenmodell.js"></script>
     <script src="js/loader.js"></script>
+    
+    
 </head>
-<body id="listBegin">
+<body>
 
-<div data-role="page" id="foo">
-
-    <div data-role="header">
-        <h1>Sessions</h1>
-    </div><!-- /header -->
-
-    <div class="ui-content-b">
-
-        <ul id="sessionListView" data-role="listview" data-split-icon="gear" data-split-theme="b" data-inset="true"></ul>
-
-        <script type="text/javascript" src="js/sessionList.js"></script>
-
-    </div>
-</div><!-- /page -->
-
-<!-- Start of second page -->
-<div data-role="page" id="bar">
-
-	<div data-role="header">
-		<h1>Bar</h1>
-	</div><!-- /header -->
-
-	<div role="main" class="ui-content">
-		<p>I'm the second in the source order so I'm hidden when the page loads. I'm just shown if a link that references my id is beeing clicked.</p>
-		<p><a href="#foo">Back to foo</a></p>
-	</div><!-- /content -->
-
-	<div data-role="footer">
-		<h4>Page Footer</h4>
-	</div><!-- /footer -->
-</div><!-- /page -->
-
-<!-- Start of the listView page -->
-<div data-role="page" id="bar">
-
-    <div data-role="header">
-        <h1>Personen</h1>
-    </div><!-- /header -->
-
-    <div role="main" class="ui-content">
-
-        <ul id="personListView" data-role="listview" data-split-icon="gear" data-split-theme="b" data-inset="true"></ul>
-        <script type="text/javascript" src="js/personList.js"></script>
-
-    </div><!-- /content -->
-
-    <div data-role="footer">
-        <h4><a href="#personFavoriten">Favoriten</a></h4>
-    </div><!-- /footer -->
-</div><!-- /page -->
-
-<!-- Start of the listView page -->
-<div data-role="page" id="personFavoriten">
-
-    <div data-role="header">
-        <h1>Personen Favoriten</h1>
-    </div><!-- /header -->
-
-    <ul id="personFavoritenListView" data-role="listview" >
-    </ul>
-
-    <div role="main" class="ui-content">
-
-    </div><!-- /content -->
-
-    <script type="text/javascript" src="js/personFavs.js"></script>
-
-</div><!-- /page -->
 
 
 </body>
