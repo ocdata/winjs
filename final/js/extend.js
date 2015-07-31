@@ -1,13 +1,15 @@
-$( document ).ready(function() {
-	// Modell initialisieren
-	// nach auf Dashboard 
-	initModel();
+function extendPages(){
+	// SessionBar aufbauen
+	for (var int = 0; int < konfModel.getDayArray().length; int++) {
+		var day = konfModel.getDayArray()[int];
+		$("#SessionListBar").append('<li><a href="#">' + day.getLabelDe() + '</a></li>');	
+	}
 	
 	// Seiten das Menu appenden!
 	addMenu($("#dashboardPage"), "dashboardPM");
 	addMenu($("#sessionListPage"), "sessionListPM");
 	addMenu($("#speakerListPage"), "speakerListPM");
-});
+}
 
 
 

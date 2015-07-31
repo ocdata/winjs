@@ -32,8 +32,8 @@
     <script src="js/moment.js"></script>
     
     <script src="js/datenmodell.js"></script>
+    <script src="js/extend.js"></script>
     <script src="js/loader.js"></script>
-    <script src="js/controller.js"></script>
     
     
 </head>
@@ -74,12 +74,7 @@
 			<a href="#speakerListPM" data-rel="popup" data-transition="slideup" data-icon="gear" class="ui-btn-right">Menü</a>
 		</div>
 		<div role="main" class="ui-content">
-			<p>I'm the second in the source order so I'm hidden when the page
-				loads. I'm just shown if a link that references my id is beeing
-				clicked.</p>
-			<p>
-				<a href="#foo">Back to foo</a>
-			</p>
+			 <ul id="speakerListView" data-role="listview" data-split-icon="gear" data-split-theme="b" data-inset="true"></ul>		
 		</div>
 	</div>
 

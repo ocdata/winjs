@@ -1,6 +1,12 @@
 var konfModel = null;
 //initModel();
 
+$( document ).ready(function() {
+	// Modell initialisieren
+	// nach auf Dashboard 
+	initModel();
+});
+
 function initModel() {
 	// loading anzeigen
 	$.mobile.loading("show", {
@@ -550,17 +556,6 @@ function parseData(data) {
 	
 	// Seite wechseln
 	$( ":mobile-pagecontainer" ).pagecontainer( "change", $("#dashboardPage"));
-}
-
-function extendPages(){
-	// SessionBar aufbauen
-	for (var int = 0; int < konfModel.getDayArray().length; int++) {
-		var day = konfModel.getDayArray()[int];
-		$("#SessionListBar").append('<li><a href="#">' + day.getLabelDe() + '</a></li>');
-		
-		
-	}
-	
 }
 
 function SortSession(a, b){
