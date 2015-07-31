@@ -12,7 +12,8 @@
 //}, 5000);
 
 
-var speakerArray = null;
+genSpeaker();
+
 function genSpeaker(){
 //    speakerArray = konfModel.getSpeakerArray();
     var speakerArray = demoSpeakerArray;

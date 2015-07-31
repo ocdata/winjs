@@ -530,6 +530,8 @@ function parseData(data) {
 		// TODO: handle exception
 		alert(e);
 	}
+
+    //TODO: genSpeaker();
 	
 	/*
 	
