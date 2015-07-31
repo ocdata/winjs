@@ -47,8 +47,16 @@ $.each(demoSessionArray, function (index, sessionArrayValue) { //demolinkarray a
         '</div>');
 });
 
-
+//auf Fav klicken
 $('.fav').click(function(){
-    var text = $(this).attr('id');
-   alert(text);
+    var sessionIdAndName = $(this).attr('id');
+
+//    if(!$.cookie("favArray").empty()){
+        var favs = [
+            { 'name' : 'Abel', 'age' : 1 },
+            { 'name' : 'Bella', 'age' : 2 },
+            { 'name' : 'Chad', 'age' : 3 },
+        ];
+    Cookies.set("favArray", JSON.stringify(favs));
+//    }
 });
