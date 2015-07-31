@@ -548,5 +548,8 @@ function parseData(data) {
 	
 	
 
+
+    //TODO: nicht direkt in Methode aufrufen sondern sequenziell?
+    genSpeaker();
 }
 

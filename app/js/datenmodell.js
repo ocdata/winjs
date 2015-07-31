@@ -1,5 +1,5 @@
 function Konferenz() {
-	
+
     // öffentliche Eigenschaft
     this.formatArray = new Array();
     this.dayArray = new Array();
@@ -15,31 +15,31 @@ function Konferenz() {
     this.getFormatArray = function () {
         return this.formatArray;
     }
-    
+
     this.getDayArray = function () {
         return this.dayArray;
     }
-    
+
     this.getLanguageArray = function () {
         return this.languageArray;
     }
-    
+
     this.getLevelArray = function () {
         return this.levelArray;
     }
-    
+
     this.getLocationArray = function () {
         return this.locationArray;
     }
-    
+
     this.getSessionArray = function () {
         return this.sessionArray;
     }
-    
+
     this.getSpeakerArray = function () {
         return this.speakerArray;
     }
-    
+
     this.getTrackArray = function () {
         return this.trackArray;
     }
@@ -217,6 +217,21 @@ function Speaker(id, name, photo, url, biography, organization, organizationUrl,
     this.getLinkArray = function () {
         return this.linkArray;
     }
+
+		this.getTwitterUsername = function() {
+		  var links = this.getLinkArray();
+		  if (!links)
+		    return null;
+		  $.each(links, function(key, link) {
+		      if (!link)
+		        return;
+		      var service = link.getService();
+		      if (service !== "twitter")
+		        return;
+		      return link.getUsername();
+			  });
+			return null;
+		}
 }
 
 function Level(id, labelDe, labelEn) {
@@ -750,9 +765,9 @@ function Maps(id, labelEn, labelDe, floorLabelDe, floorLabelEn, isOutdoor, isInd
     this.labelDe = labelDe;
     this.floorLabelDe = floorLabelDe;
     this.floorLabelEn = floorLabelEn;
-    // Format: true/false 
+    // Format: true/false
     this.isOutdoor = isOutdoor;
-    // Format: true/false 
+    // Format: true/false
     this.isIndoor = isIndoor;
     this.floor = floor;
     this.orderIndex = orderIndex;
