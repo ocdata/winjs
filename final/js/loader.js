@@ -556,7 +556,7 @@ function extendPages(){
 	// SessionBar aufbauen
 	for (var int = 0; int < konfModel.getDayArray().length; int++) {
 		var day = konfModel.getDayArray()[int];
-		$("#SessionBar").append('<li><a href="#">' + day.getLabelDe() + '</a></li>');
+		$("#SessionListBar").append('<li><a href="#">' + day.getLabelDe() + '</a></li>');
 		
 		
 	}

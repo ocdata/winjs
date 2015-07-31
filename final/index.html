@@ -48,15 +48,30 @@
 
 </div><!-- /page -->
 
-	<!-- Start of second page -->
-	<div data-role="page" id="sessionPage">
+
+	<div data-role="page" id="sessionListPage">
 		<div data-role="header">
 			<h1>Session</h1>
-			     <a href="#sessionPM" data-rel="popup" data-transition="slideup" data-icon="gear" class="ui-btn-right">Menü</a>
+			     <a href="#sessionListPM" data-rel="popup" data-transition="slideup" data-icon="gear" class="ui-btn-right">Menü</a>
 			<div data-role="navbar">
-				<ul id="SessionBar">
+				<ul id="SessionListBar">
 				</ul>
 			</div>
+		</div>
+		<div role="main" class="ui-content">
+			<p>I'm the second in the source order so I'm hidden when the page
+				loads. I'm just shown if a link that references my id is beeing
+				clicked.</p>
+			<p>
+				<a href="#foo">Back to foo</a>
+			</p>
+		</div>
+	</div>
+	
+	<div data-role="page" id="speakerListPage">
+		<div data-role="header">
+			<h1>Speakerübersicht</h1>
+			<a href="#speakerListPM" data-rel="popup" data-transition="slideup" data-icon="gear" class="ui-btn-right">Menü</a>
 		</div>
 		<div role="main" class="ui-content">
 			<p>I'm the second in the source order so I'm hidden when the page
@@ -72,7 +87,7 @@
 	<div data-role="page" id="dashboardPage">
 		<div data-role="header">
 			<h1>Dashboard</h1>
-			    <a href="#dashboardPM" data-rel="popup" data-transition="slideup" data-icon="gear" class="ui-btn-right">Menü</a>
+			<a href="#dashboardPM" data-rel="popup" data-transition="slideup" data-icon="gear" class="ui-btn-right">Menü</a>
 		</div>
 
 
@@ -81,7 +96,8 @@
 				loads. I'm just shown if a link that references my id is beeing
 				clicked.</p>
 			<p>
-				<a href="#sessionPage" class="ui-btn">Sessionplan</a>
+				<a href="#sessionListPage" class="ui-btn">Sessionplan</a>
+				<a href="#speakerListPage" class="ui-btn">Speakerübersicht</a>
 			</p>
 		</div>
 	</div>

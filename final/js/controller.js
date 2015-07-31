@@ -5,7 +5,8 @@ $( document ).ready(function() {
 	
 	// Seiten das Menu appenden!
 	addMenu($("#dashboardPage"), "dashboardPM");
-	addMenu($("#sessionPage"), "sessionPM");
+	addMenu($("#sessionListPage"), "sessionListPM");
+	addMenu($("#speakerListPage"), "speakerListPM");
 });
 
 
