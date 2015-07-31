@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="css/default.css" />
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+  <script type="text/javascript">
+  $('#speakerTimeline').attr("data-screen-name", "Tatjana");
+  $('body').append('<a id="speakerTimeline" class="twitter-timeline" href="https://twitter.com/hashtag/hackathonrm" data-screen-name="Tatjana" data-widget-id="627087937411354624">#hackathonrm-Tweets</a>');
+  </script>
+  <script src="js/twitter.widgets.js"></script>
+  <script src="js/default.js"></script>
+</head>
+<body>
+<div id="hashtagwidget"></div>
+
+
+<script>
+
+function tryCreateTimeline() {
+  if(twttr.widgets) {
+  twttr.widgets.createTimeline(
+    '627087937411354624',
+    document.getElementById('hashtagwidget'),
+    {
+      width: '450',
+      height: '700',
+      related: 'twitterdev,twitterapi',
+      screenName: 'Tatjana'
+    }).then(function (el) {
+      console.log("Embedded a timeline.")
+    });
+  }
+  else {
+    setTimeout(tryCreateTimeline, 200);
+  }
+}
+tryCreateTimeline();
+  </script>
+</body>
+</html>

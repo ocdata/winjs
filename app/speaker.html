@@ -25,9 +25,10 @@
             </script>
         </div>
 
+
         <!-- Foto - mittig -->
         <div class="ui-body ui-body-a" id="">
-            <div style="text-align:center;">
+            <div style="text-align:center">
                 <img alt="Foto" height="200" width="200" id="personPhoto">
                 <script>
                     $("#personPhoto").attr("src", speaker1.photo);
@@ -46,6 +47,7 @@
             <div class="ui-bar ui-bar-a">
                 <p id="orga">
                     Organisation:
+
                     <a id="linktext" target="_blank"></a>
                 </p>
                 <script>
@@ -53,6 +55,7 @@
                     $("#linktext").text(speaker1.organization);
                     $("#orga a").attr("href", speaker1.position); document.getElementById("link").setAttribute("href",
 speaker1.organizationUrl);
+
                 </script>
             </div>
 
