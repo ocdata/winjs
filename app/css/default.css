@@ -12,7 +12,12 @@
   -webkit-border-bottom-right-radius: inherit;
   border-bottom-right-radius: inherit;
 }
-﻿
+
+.distance {
+    margin-bottom: 4px;
+    margin-top: 4px;
+}﻿
+
 div.personText {
     float: left;
     margin-left: 10px;

@@ -10,8 +10,6 @@
 //alert(speaker1.getName());
 //alert("hello");
 
-
-
 //array durchlaufen listView mit den Personen populieren. Für jede Person Detailseite anlegen
 $.each(demoSpeakerArray, function( index, personArrayValue ) { //demoSpeakerArray aus stub.js
 
@@ -24,7 +22,7 @@ $.each(demoSpeakerArray, function( index, personArrayValue ) { //demoSpeakerArra
     var pageLink = personId + personName;
 
     //Detailseiten anlegen
-    $("body").append('<div data-role="page" id="' + pageLink + '">' +
+    $("div #listBegin").append('<div data-role="page" id="' + pageLink + '">' +
         '<div data-role="header"><h1>' + personName + ' (' + personPosition + ')</h1></div>');
 
     //ListView population
