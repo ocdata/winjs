@@ -33,9 +33,9 @@ demoLinkArray.push(link1);
 demoLinkArray.push(link2);
 
 
-var session1 = new Session("session-1", "Die beste WebApp der Welt!", "abstract", "description", "", "2015-05-07T11:45:00.000Z", "2015-05-07T12:45:00.000Z", 3600, day1, loc1, format1, track1, level1, languages1, demoSpeakerArray, demoLinkArray);
-var session2 = new Session("session-2", "IBM Bluemix", "abstract", "description", "", "2015-05-07T10:45:00.000Z", "2015-05-07T11:40:00.000Z", 3600, day1, loc2, format2, track1, level2, languages2, demoSpeakerArray, demoLinkArray);
-var session3 = new Session("session-3", "Deutsche Bank", "abstract", "description", "", "2015-05-07T13:45:00.000Z", "2015-05-07T14:45:00.000Z", 3600, day1, loc1, format2, track2, level2, languages1, demoSpeakerArray, demoLinkArray);
+var session1 = new Session("session-1", "Die beste WebApp der Welt!", "abstract", "description", "", "2015-05-07T11:45:00.000Z", "2015-05-07T12:45:00.000Z", 3600, "", day1, loc1, format1, track1, level1, languages1, demoSpeakerArray, demoLinkArray);
+var session2 = new Session("session-2", "IBM Bluemix", "abstract", "description", "", "2015-05-07T10:45:00.000Z", "2015-05-07T11:40:00.000Z", 3600, "", day1, loc2, format2, track1, level2, languages2, demoSpeakerArray, demoLinkArray);
+var session3 = new Session("session-3", "Deutsche Bank", "abstract", "description", "", "2015-05-07T13:45:00.000Z", "2015-05-07T14:45:00.000Z", 3600, "", day1, loc1, format2, track2, level2, languages1, demoSpeakerArray, demoLinkArray);
 
 var demoSessionArray = new Array();
 demoSessionArray.push(session1);

@@ -325,6 +325,7 @@ function parseData(data) {
 			var begin = "";
 			var end = "";
 			var duration = 0;
+			var sliderShareKey = "";
 			
 			var dayObj = null;
 			var locationObj = null;
@@ -363,6 +364,10 @@ function parseData(data) {
 			
 			if(itemData.hasOwnProperty("duration")){
 				duration = itemData.duration;
+			}
+			
+			if(itemData.hasOwnProperty("sliderShareKey")){
+				sliderShareKey = itemData.sliderShareKey;
 			}
 			
 			if(itemData.hasOwnProperty("links")){
@@ -509,7 +514,7 @@ function parseData(data) {
 			}
 			
 			
-			konfModel.getSessionArray().push(new Session(id, title, abstractStr, description, url, begin, end, duration, dayObj, locationObj, formatObj, trackObj, levelObj, languageObj, speakerArray, linkArray));
+			konfModel.getSessionArray().push(new Session(id, title, abstractStr, description, url, begin, end, duration, sliderShareKey, dayObj, locationObj, formatObj, trackObj, levelObj, languageObj, speakerArray, linkArray));
 		}		
 	}catch (e) {
 		// TODO: handle exception
