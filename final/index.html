@@ -22,6 +22,9 @@
     <meta name="msapplication-TileImage" content="images/favicon.png">
     <meta name="msapplication-TileColor" content="#3372DF">
 
+	<!-- Fonts -->
+	<link href="css/font-awesome.css" rel="stylesheet" />
+	
 	<!-- stylesheet -->
 	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
 	<link rel="stylesheet" href="css/default.css" />
@@ -68,11 +71,71 @@
 		<div data-role="header">
 			<div data-role="header">
 				<h1>Session</h1>
-				<a href="#sessionDetailPM" data-rel="popup"
-					data-transition="slideup" data-icon="gear" class="ui-btn-right">Menü</a>
+				<a href="#sessionDetailPM" data-icon="bars" class="ui-btn-left">Menü</a>
 			</div>
 		</div>
-		<div role="main" class="ui-content"></div>
+		<div role="main" class="ui-content">
+			<h1 id="sessionDetailTitle"></h1>
+			<div class="ui-grid-b ui-responsive">
+				<div class="ui-block-a">
+					<div class="ui-bar ui-bar-a" style="min-height: 60px; text-align:center;" id="sessionDetailTime"></div>
+				</div>
+				<div class="ui-block-b">
+					<div class="ui-bar ui-bar-a" style="min-height: 60px; text-align:center;" id="sessionDetailLocation"></div>
+				</div>
+				<div class="ui-block-c">
+					<div class="ui-bar ui-bar-a" style="min-height: 60px; text-align:center;" id="sessionDetailLanguage"></div>
+				</div>
+			</div>
+			<div class="ui-grid-a ui-responsive">
+				<div class="ui-block-a">
+					<div class="ui-bar ui-bar-a" style="min-height: 60px; text-align:center;" id="sessionDetailTrack"></div>
+				</div>
+				<div class="ui-block-b">
+					<div class="ui-bar ui-bar-a" style="min-height: 60px; text-align:center;" id="sessionDetailLevel"></div>
+				</div>
+			</div>
+			<br/>
+			<div data-role="collapsibleset" data-theme="a" data-content-theme="a">
+				<div data-role="collapsible" data-collapsed="false">
+					<h3>Kurzbeschreibung</h3>
+					<p id="sessionDetailAbstract"></p>
+				</div>
+				<div data-role="collapsible">
+					<h3>Langbeschreibung</h3>
+					<p id="sessionDetailDesc"></p>
+				</div>
+			</div>
+			<br />
+			<div class="ui-body ui-body-a">
+				<h4>Speaker</h4>
+				 <ul id="sessionDetailSpeakerListView" data-role="listview" data-split-icon="gear" data-split-theme="b" data-inset="true"></ul>
+			</div>
+			<br />
+			<div class="ui-body ui-body-a" id="sessionDetailLinkCon">
+				<h4>Links</h4>
+				 <ul id="sessionDetailLinkListView" data-role="listview" data-split-icon="gear" data-split-theme="b" data-inset="true"></ul>
+			</div>
+			<br />
+			<div class="ui-body ui-body-a">
+				<h4>gemeinschatliche Notizen</h4>
+				<!-- Leider noch nicht dynamisch, weil Bluemix nicht ging:-( -->
+				<p id="sessionDetailetherpad" style="text-align:center;" />
+			</div>
+			<br />
+			<div class="ui-body ui-body-a">
+				<h4>private Notizen</h4>
+				 <textarea rows="10"></textarea>
+				 <button class="ui-btn" onclick="alert('leider noch nicht implementiert!')">speichern</button>
+			</div>
+			<br />
+			<div class="ui-body ui-body-a" id="sessionDetailSliderShareCon">
+				<h4>Präsentation</h4>
+				 <p id="sessionDetailSliderShare" style="text-align:center;" />
+			</div>			
+
+
+		</div>
 	</div>
 
 	<div data-role="page" id="speakerListPage">

@@ -43,6 +43,35 @@ function getSessionsByDay(day) {
 	return ergArray;
 }
 
+function genSpeakerList(listView, speakerArray, withDelete) {
+	// liste erstmal reseten
+	if(withDelete){
+		listView.empty();
+	}
+	
+	$.each(speakerArray, function( index, speaker ) { //demoSpeakerArray aus stub.js
+        var speakerId = speaker.getId();
+        var speakerName = speaker.getName();
+        var speakerFirma = speaker.getOrganization();
+        var speakerPosition = speaker.getPosition();
+        var speakerPhoto = speaker.getPhoto();
+
+        //ListView population
+        listView.append('<li>' +
+            '<a onclick="goToSpeakerDetail(\'' + speakerId + '\');">' +
+            '<div style="background-image: url(' + speakerPhoto + ')" class="speakerPhoto"></div>' +
+            '<div class="speakerText">'+ speakerName + ' (' + speakerPosition + ')<br />' + speakerFirma + '</div>' +
+            '</a>' +
+            '<a></a></li>'); 
+    });
+	 
+	 try {
+		 // Liste neuerstellen lassen
+		 listView.listview('refresh');
+	} catch (e) {
+		// TODO: handle exception
+	}
+}
 
 function genLinkList(listView, linkArray) {
 	// liste erstmal reseten
@@ -134,23 +163,8 @@ $(document).on("pagecreate", "#sessionListPage", function(event){
 
 $(document).on("pagecreate", "#speakerListPage", function(event){
 	var speakerArray = konfModel.getSpeakerArray();
-	$.each(speakerArray, function( index, speaker ) { //demoSpeakerArray aus stub.js
-        var speakerId = speaker.getId();
-        var speakerName = speaker.getName();
-        var speakerFirma = speaker.getOrganization();
-        var speakerPosition = speaker.getPosition();
-        var speakerPhoto = speaker.getPhoto();
 
-        //ListView population
-        $("#speakerListView").append('<li>' +
-            '<a onclick="goToSpeakerDetail(\'' + speakerId + '\');">' +
-            '<div style="background-image: url(' + speakerPhoto + ')" class="speakerPhoto"></div>' +
-            '<div class="speakerText">'+ speakerName + ' (' + speakerPosition + ')<br />' + speakerFirma + '</div>' +
-            '</a>' +
-            '<a></a></li>'); 
-    });
-
-    $("#speakerListView").listview( "refresh" );
+	genSpeakerList($("#speakerListView"), speakerArray, false);
 });
 
 function changeDay(ident) {
@@ -220,8 +234,70 @@ function goToSpeakerDetail(ident) {
 }
 
 function goToSessionDetail(ident) {
+	// session suchen
+	var session = null;
+	
+	for (var int = 0; int < konfModel.getSessionArray().length; int++) {
+		session = konfModel.getSessionArray()[int];
+		if(session.getId() == ident){
+			// richtiger Speaker gefunden oder den Letzten!
+			break;
+		}
+	}
+	
+	//var test = new Session(id, title, abstractStr, description, url, begin, end, duration, sliderShareKey, dayObj, locationObj, formatObj, trackObj, levelObj, languageObj, speakerArray, linkArray);
+	//test.getTitle();
+	
+	// Seite belegen
+	$("#sessionDetailTitle").text(session.getTitle());
+    // Erstellen eines Strings mit der Uhrzeit
+    var begin = session.getBegin();
+    var end = session.getEnd();
+    begin = moment(begin).format("HH:mm");
+    end = moment(end).format("HH:mm");
+    var vonBis = begin + ' - ' + end;
+
+    // Text einfüllen
+	$("#sessionDetailTime").html("Zeit:<br/>" + vonBis + " (" + (session.getDuration() / 60 / 60) + "h)");
+	$("#sessionDetailLocation").html("Ort:<br/>" + session.getLocationObj().getLabelDe());
+	$("#sessionDetailLanguage").html("Sprache:<br/>" + session.getLanguageObj().getLabelDe());
+	$("#sessionDetailTrack").html("Track:<br/>" + session.getTrackObj().getLabelDe() + " <span class='fa fa-cube' style='color:" + session.getTrackObj().getColor() + "'></span>");
+	
+	$("#sessionDetailLevel").html("Level:<br/>" + session.getLevelObj().getLabelDe());
+	
+	$("#sessionDetailAbstract").html(session.getAbstractStr());
+	$("#sessionDetailDesc").html(session.getDescription());
+	
+	 // Speakerliste erzeugen
+	genSpeakerList($("#sessionDetailSpeakerListView"), session.getSpeakerArray(), true);
+	
+	 // Linkliste erzeugen
+	if(session.getLinkArray().length == 0){
+		$("#sessionDetailLinkCon").hide();
+	}else{
+		$("#sessionDetailLinkCon").show();
+		genLinkList($("#sessionDetailLinkListView"), session.getLinkArray());
+	}
+	
+	// etherpad
+	$('#sessionDetailetherpad').html(" <iframe name='embed_readwrite' src='https://piratenpad.de/p/BnXFfh1mxgox8fvlelrls?showControls=true&showChat=true&showLineNumbers=true&useMonospaceFont=false' width='100%' height='400px'></iframe>");
+	
+	//slidershare
+	session.setSliderShareKey("oVTBqK6ZNhLBZy");
+	
+	if(session.getSliderShareKey() == ""){
+		$("#sessionDetailSliderShareCon").hide();
+	}else{
+		$("#sessionDetailSliderShareCon").show();
+		$('#sessionDetailSliderShare').html('<iframe id="slideshare" src="https://de.slideshare.net/slideshow/embed_code/key/' + session.getSliderShareKey() +
+				'"width="599" height="487" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen/>');
+	}
+	
+
+
+	
+	
 	// Seite wechseln
-	alert(ident);	
 	$( ":mobile-pagecontainer" ).pagecontainer( "change", $("#sessionDetailPage"));
 }
 
