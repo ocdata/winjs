@@ -164,7 +164,7 @@
 				<div class="ui-block-b">
 					<h1 id="speakerDetailName"></h1>
 					<p id="speakerDetailPosition"></p>
-					<a id="speakerDetailOrganisation"></a>
+					<p id="speakerDetailOrganisation"></p>
 				</div>
 			</div>
 			<br />
@@ -296,11 +296,17 @@
 				</div>
 				<!-- Nachricht - Input -->
 				<div class="ui-block-b">
-					<textarea cols="45" rows="5"></textarea>
+					<textarea></textarea>
 				</div>
 			</div>
 			<div class="ui-grid-solo">
-				<a onclick="alert('Nachricht wurde versendet!')" class="ui-btn">Senden</a>
+
+				<a href="#kontaktPopupc" data-rel="popup" class="ui-btn">Senden</a>
+
+				<div data-role="popup" id="kontaktPopupc" style="padding: 60px">
+				    <a data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Schließen</a>
+					<p>Nachricht wurde versendet!</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -408,8 +414,10 @@
 	                    Andre Ganser<br />
 	                    Alexander Gräsel<br />
 	                    Lukas Schaller<br />
-	                    <br />
-	                    <b>Entwickler Team Sparta</b><br />
+	                    <br /></p>
+	                    
+	                    <h4>Entwickler Team Sparta</h4>
+	                    <p>
 	                    Johannes Gutenberg-Universität Mainz<br />
 	                    Saarstraße 21<br />
 	                    55122 Mainz<br />
