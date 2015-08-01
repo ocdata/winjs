@@ -11,9 +11,8 @@
 //    $("#personListView").listview( "refresh" );
 //}, 5000);
 
-
+var speakerArray = null;
 genSpeaker();
-
 function genSpeaker(){
 //    speakerArray = konfModel.getSpeakerArray();
     var speakerArray = demoSpeakerArray;
@@ -47,8 +46,8 @@ function genSpeaker(){
             '<a href="#'+ pageLink + '" class="">' +
             '<div style="background-image: url(' + personPhoto + ')" class="personPhoto"></div>' +
             '<div class="personText">'+ personName + ' (' + personPosition + ')<br />' + personFirma + '</div>' +
-            '</a>' +
-            '<a href="#fav"></a></li>'); //<img src="' + personPhoto + '">
+            '</a>');
+//            '<a href="#fav" id="'+ pageLink +'" class="fav ' + pageLink+ '" data-theme="c"></a></li>');
     });
 
     $("#personListView").listview( "refresh" );

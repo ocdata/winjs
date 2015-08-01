@@ -1,14 +1,34 @@
 var konfModel = null;
 //initModel();
 
+$( document ).ready(function() {
+	// Modell initialisieren
+	// nach auf Dashboard 
+	initModel();
+});
+
 function initModel() {
+	// loading anzeigen
+	$.mobile.loading("show", {
+		text : "laden...",
+		textVisible : true,
+		textonly : false,
+		html : ""
+	});
+
 	$.ajax({
-		   url: "http://rp.axxg.org/2015/testData.php",
-		   dataType: "json",
-		   data: {},
-		   type: "GET",
-		   success: function(data) { parseData(data); }
-		});		
+		url : "http://rp.axxg.org/2015/testData.php",
+		dataType : "json",
+		data : {},
+		type : "GET",
+		success : function(data) {
+			parseData(data);
+		}
+	}).done(function() {
+		$.mobile.loading("hide");
+	});
+
+	
 }
 
 function parseData(data) {
@@ -531,20 +551,11 @@ function parseData(data) {
 		alert(e);
 	}
 	
-	/*
+	//Seite vorab aufbauen fuer schnelle Navigation und co!
+	extendPages();
 	
-	alert("Tag:" + konfModel.getDayArray().length +
-			"Format:" + konfModel.getFormatArray().length +
-			"Lang:" + konfModel.getLanguageArray().length +
-			"Level:" + konfModel.getLevelArray().length +
-			"Loc:" + konfModel.getLocationArray().length +
-			"Track:" + konfModel.getTrackArray().length +
-			"Speaker:" + konfModel.getSpeakerArray().length +
-			"Session:" + konfModel.getSessionArray().length);
-	
-	//alert(konfModel.getSessionArray()[0].getId());
-	
-	*/
+	// Seite wechseln
+	$( ":mobile-pagecontainer" ).pagecontainer( "change", $("#dashboardPage"));
 }
 
 function SortSession(a, b){
