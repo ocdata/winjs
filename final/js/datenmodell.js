@@ -50,18 +50,18 @@ function Konferenz() {
 function Format(id, labelDe, labelEn) {
 
     // öffentliche Eigenschaft
-    this.id = id;
+    this.ident = id;
     this.labelDe = labelDe;
     this.labelEn = labelEn;
 
 
     // privilegierte öffentliche Methoden
     this.setId = function (newId) {
-        this.id = newId;
+        this.ident = newId;
     }
 
     this.getId = function () {
-        return this.id;
+        return this.ident;
     }
 
     this.setLabelDe = function (newLabelDe) {
@@ -135,7 +135,7 @@ function Link(url, title, service, type, username) {
 function Speaker(id, name, photo, url, biography, organization, organizationUrl, position, linkArray) {
 
     // öffentliche Eigenschaft
-    this.id = id;
+    this.ident = id;
     this.name = name;
     this.photo = photo;
     this.url = url;
@@ -147,11 +147,11 @@ function Speaker(id, name, photo, url, biography, organization, organizationUrl,
 
     // privilegierte öffentliche Methoden
     this.setId = function (newId) {
-        this.id = newId;
+        this.ident = newId;
     }
 
     this.getId = function () {
-        return this.Id;
+        return this.ident;
     }
 
     this.setName = function (newName) {
@@ -237,18 +237,18 @@ function Speaker(id, name, photo, url, biography, organization, organizationUrl,
 function Level(id, labelDe, labelEn) {
 
     // öffentliche Eigenschaft
-    this.id = id;
+    this.ident = id;
     this.labelDe = labelDe;
     this.labelEn = labelEn;
 
 
     // privilegierte öffentliche Methode
     this.setId = function (newId) {
-        this.id = newId;
+        this.ident = newId;
     }
 
     this.getId = function () {
-        return this.id;
+        return this.ident;
     }
 
     this.setLabelDe = function (newLabelDe) {
@@ -271,18 +271,18 @@ function Level(id, labelDe, labelEn) {
 function Language(id, labelDe, labelEn) {
 
     // öffentliche Eigenschaft
-    this.id = id;
+    this.ident = id;
     this.labelDe = labelDe;
     this.labelEn = labelEn;
 
 
     // privilegierte öffentliche Methoden
     this.setId = function (newId) {
-        this.id = newId;
+        this.ident = newId;
     }
 
     this.getId = function () {
-        return this.id;
+        return this.ident;
     }
 
     this.setLabelDe = function (newLabelDe) {
@@ -305,7 +305,7 @@ function Language(id, labelDe, labelEn) {
 function Track(id, labelDe, labelEn, color) {
 
     // öffentliche Eigenschaft
-    this.id = id;
+    this.ident = id;
     // color soll z.B. das enthalten: #ff0000
     this.color = color;
     this.labelDe = labelDe;
@@ -314,11 +314,11 @@ function Track(id, labelDe, labelEn, color) {
 
     // privilegierte öffentliche Methode
     this.setId = function (newId) {
-        this.id = newId;
+        this.ident = newId;
     }
 
     this.getId = function () {
-        return this.id;
+        return this.ident;
     }
 
     this.setColor = function (newColor) {
@@ -349,7 +349,7 @@ function Track(id, labelDe, labelEn, color) {
 function Location(id, labelDe, labelEn, orderIndex, isStage) {
 
     // öffentliche Eigenschaft
-    this.id = id;
+    this.ident = id;
     this.orderIndex = orderIndex;
     this.isStage = isStage;
     this.labelDe = labelDe;
@@ -358,11 +358,11 @@ function Location(id, labelDe, labelEn, orderIndex, isStage) {
 
     // privilegierte öffentliche Methoden
     this.setId = function (newId) {
-        this.id = newId;
+        this.ident = newId;
     }
 
     this.getId = function () {
-        return this.id;
+        return this.ident;
     }
 
     this.setOrderIndex = function (newOrderIndex) {
@@ -401,7 +401,7 @@ function Location(id, labelDe, labelEn, orderIndex, isStage) {
 function Day(id, labelDe, labelEn, dateStr) {
 
     // öffentliche Eigenschaft
-    this.id = id;
+    this.ident = id;
     // dateStr soll z.B. das enthalten: 2015-05-30
     this.dateStr = dateStr;
     this.labelDe = labelDe;
@@ -410,11 +410,11 @@ function Day(id, labelDe, labelEn, dateStr) {
 
     // privilegierte öffentliche Methoden
     this.setId = function (newId) {
-        this.id = newId;
+        this.ident = newId;
     }
 
     this.getId = function () {
-        return this.id;
+        return this.ident;
     }
 
     this.setDateStr = function (newDateStr) {
@@ -445,7 +445,7 @@ function Day(id, labelDe, labelEn, dateStr) {
 function Session(id, title, abstractStr, description, url, begin, end, duration, sliderShareKey, dayObj, locationObj, formatObj, trackObj, levelObj, languageObj, speakerArray, linkArray) {
 
     // öffentliche Eigenschaft
-    this.id = id;
+    this.ident = id;
     this.title = title;
     this.abstractStr = abstractStr;
     this.description = description;
@@ -466,11 +466,11 @@ function Session(id, title, abstractStr, description, url, begin, end, duration,
 
     // privilegierte öffentliche Methoden
     this.setId = function (newId) {
-        this.id = newId;
+        this.ident = newId;
     }
 
     this.getId = function () {
-        return this.id;
+        return this.ident;
     }
 
     this.setTitle = function (newTitle) {
@@ -642,7 +642,7 @@ function Position(mapObj, x, y) {
 function Pois(id, labelEn, labelDe, category, positionObj, hidden, priority, locationObj) {
 
     // öffentliche Eigenschaft
-    this.id = id;
+    this.ident = id;
     this.type = "Poi"
     this.labelEn = labelEn;
     this.labelDe = labelDe;
@@ -656,11 +656,11 @@ function Pois(id, labelEn, labelDe, category, positionObj, hidden, priority, loc
 
     // privilegierte öffentliche Methoden
     this.setId = function (newId) {
-        this.id = newId;
+        this.ident = newId;
     }
 
     this.getId = function () {
-        return this.Id;
+        return this.ident;
     }
 
     this.setLabelDe = function (newLabelDe) {
@@ -729,7 +729,7 @@ function Pois(id, labelEn, labelDe, category, positionObj, hidden, priority, loc
 }
 
 function Maps(id, labelEn, labelDe, floorLabelDe, floorLabelEn, isOutdoor, isIndoor, floor, orderIndex, areaObj, tilesObj, poisObj) {
-    this.id = id;
+    this.ident = id;
     this.type = "map";
     this.labelEn = labelEn;
     this.labelDe = labelDe;
@@ -747,11 +747,11 @@ function Maps(id, labelEn, labelDe, floorLabelDe, floorLabelEn, isOutdoor, isInd
 
     // privilegierte öffentliche Methoden
     this.setId = function (newId) {
-        this.id = newId;
+        this.ident = newId;
     }
 
     this.getId = function () {
-        return this.Id;
+        return this.ident;
     }
 
     this.setLabelDe = function (newLabelDe) {

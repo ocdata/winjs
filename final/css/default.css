@@ -17,15 +17,14 @@
     font-size: 20px;
 }
 
-div.speakerString {
+.speakerString {
     font-size: 12px;
     margin-bottom: 14px;
     text-align: left;
 }
-﻿ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figure, figcaption, hgroup, menu, header, footer, nav, section, summary, time, mark, audio, video, input {
-    border: 0 none;
-}
-div.personPhoto {
+
+
+div.speakerPhoto {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -33,16 +32,13 @@ div.personPhoto {
     height: 106px;
     width: 100px;
 }
-div.personText {
+div.speakerText {
     float: left;
     margin-left: 20px;
     margin-top: 34px;
-}
-.ui-content {
-    height: 87%;
-    overflow: scroll;
+    word-wrap: break-word;
 }
 
-div.speakLocation {
+div.sessionLocation {
     font-size: 14px;
 }

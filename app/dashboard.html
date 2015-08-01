@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/default.css" />
+
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/js.cookie.js"></script>
+    <script src="js/default.js"></script>
+
+    <script src="js/datenmodell.js"></script>
+    <script src="js/loader.js"></script>
+</head>
+<body id="listBegin">
+
+    <div data-role="page" id="foo">
+
+        <div data-role="header">
+            <h1>Dashboard</h1>
+        </div><!-- /header -->
+
+        <div class="ui-content-b sessions">
+            <div class="ui-body ui-body-a">
+                <div class="ui-grid-b ui-responsive">
+                    <div class="ui-block-a">
+                        <!-- Session Liste-->
+                        <button type="button" data-theme="c">
+                            <p><span class="fa fa-calendar fa-3x"></span><br /><br />Sessions</p>
+                        </button>
+                    </div>
+                    <div class="ui-block-b">
+                        <!-- Favoriten Liste-->
+                        <button type="button" data-theme="c">
+                            <p><span class="fa fa-heart fa-3x"></span><br /><br />Favoriten</p>
+                        </button>
+                    </div>
+                    <div class="ui-block-c">
+                        <!-- Speaker Liste-->
+                        <button type="button" data-theme="c">
+                            <p><span class="fa fa-user fa-3x"></span><br /><br />Sprecher</p>
+                        </button>
+                    </div>
+                    <div class="ui-block-a">
+                        <!-- Karte/Map für Lagepläne -->
+                        <button type="button" data-theme="c">
+                            <p><span class="fa fa-map-signs fa-3x"></span><br /><br />Lagepläne</p>
+                        </button>
+                    </div>
+                    <div class="ui-block-b">
+                        <!-- Karte/Map für Anfahrt -->
+                        <button type="button" data-theme="c">
+                            <p><span class="fa fa-map fa-3x"></span><br /><br />Anfahrt</p>
+                        </button>
+                    </div>
+                    <div class="ui-block-c">
+                        <!-- Kontakt -->
+                        <button type="button" data-theme="c">
+                            <p><span class="fa fa-envelope fa-3x"></span><br /><br />Kontakt</p>
+                        </button>
+                    </div>
+                </div><!-- /grid-b -->
+            </div>
+        </div>
+    </div><!-- /page -->
+
+
+
+</body>
+</html>

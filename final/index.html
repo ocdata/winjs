@@ -33,37 +33,117 @@
     <script src="js/moment.js"></script>
     
     <script src="js/datenmodell.js"></script>
+    <script src="js/extend.js"></script>
     <script src="js/loader.js"></script>
     
     
 </head>
-<body>
+<body id="context">
 
-<!-- Start of first page -->
+
 <div data-role="page" id="loadingPage">
 
 	<div role="main" class="ui-content">
 		<img alt="loading" src="images/load.jpg" style="width: 100%; height: 100%">
 	</div><!-- /content -->
 
+</div>
 
-</div><!-- /page -->
 
-<!-- Start of second page -->
-<div data-role="page" id="bar">
+	<div data-role="page" id="sessionListPage">
+		<div data-role="header">
+			<h1>Sessionplan</h1>
+			     <a href="#sessionListPM" data-icon="bars" class="ui-btn-left">Menü</a>
+			<div data-role="navbar">
+				<ul id="SessionListBar">
+				</ul>
+			</div>
+		</div>
+		<div role="main" class="ui-content">
+			 <ul id="sessionListView" data-role="listview" data-split-icon="gear" data-split-theme="b" data-inset="true"></ul>
+		</div>
+	</div>
 
-	<div data-role="header">
-		<h1>Bar</h1>
-	</div><!-- /header -->
+	<div data-role="page" id="sessionDetailPage">
+		<div data-role="header">
+			<div data-role="header">
+				<h1>Session</h1>
+				<a href="#sessionDetailPM" data-rel="popup"
+					data-transition="slideup" data-icon="gear" class="ui-btn-right">Menü</a>
+			</div>
+		</div>
+		<div role="main" class="ui-content"></div>
+	</div>
 
-	<div role="main" class="ui-content">
-		<p>I'm the second in the source order so I'm hidden when the page loads. I'm just shown if a link that references my id is beeing clicked.</p>
-		<p><a href="#foo">Back to foo</a></p>
-	</div><!-- /content -->
+	<div data-role="page" id="speakerListPage">
+		<div data-role="header">
+			<h1>Speakerübersicht</h1>
+			<a href="#speakerListPM" data-icon="bars" class="ui-btn-left">Menü</a>
+		</div>
+		<div role="main" class="ui-content">
+			 <ul id="speakerListView" data-role="listview" data-split-icon="gear" data-split-theme="b" data-inset="true"></ul>		
+		</div>
+	</div>
 
-	<div data-role="footer">
-		<h4>Page Footer</h4>
-	</div><!-- /footer -->
-</div><!-- /page -->
+	<div data-role="page" id="speakerDetailPage">
+		<div data-role="header">
+			<h1>Speaker</h1>
+			<a href="#speakerDetailPM" data-icon="bars" class="ui-btn-left">Menü</a>
+		</div>
+		<div role="main" class="ui-content">
+			<div class="ui-grid-a ui-responsive">
+				<div class="ui-block-a">
+				 <div style="text-align:center">
+                    <img alt="Foto" height="200" width="200" id="speakerDetailFoto">
+                </div>
+				</div>
+				<div class="ui-block-b">
+					<h1 id="speakerDetailName"></h1>
+					<p id="speakerDetailPosition"></p>
+					<a id="speakerDetailOrganisation"></a>
+				</div>
+			</div>
+			<br />
+			<div class="ui-body ui-body-a">
+				<h4>Biografie</h4>
+				<p id="speakerDetailBiografie"></p>
+
+			</div>
+			<br />
+			<div class="ui-body ui-body-a">
+				<h4>Links</h4>
+				 <ul id="speakerDetailLinkListView" data-role="listview" data-split-icon="gear" data-split-theme="b" data-inset="true"></ul>
+			</div>
+			<br />
+			<div class="ui-body ui-body-a">
+				<h4>Sessions</h4>
+				 <ul id="speakerDetailSessionListView" data-role="listview" data-split-icon="gear" data-split-theme="b" data-inset="true"></ul>
+			</div>
+
+
+		</div>
+	</div>
+
+
+	<div data-role="page" id="dashboardPage">
+		<div data-role="header">
+			<h1>Dashboard</h1>
+			<a href="#dashboardPM" data-icon="bars" class="ui-btn-left">Menü</a>
+		</div>
+
+
+		<div role="main" class="ui-content">
+			<p>I'm the second in the source order so I'm hidden when the page
+				loads. I'm just shown if a link that references my id is beeing
+				clicked.</p>
+			<p>
+				<a href="#sessionListPage" class="ui-btn">Sessionplan</a>
+				<a href="#speakerListPage" class="ui-btn">Speakerübersicht</a>
+			</p>
+		</div>
+	</div>
+	
+
+	
 </body>
 </html>
