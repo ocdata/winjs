@@ -2,7 +2,11 @@ function extendPages(){
 	// SessionBar aufbauen
 	for (var int = 0; int < konfModel.getDayArray().length; int++) {
 		var day = konfModel.getDayArray()[int];
-		$("#SessionListBar").append('<li><a href="#">' + day.getLabelDe() + '</a></li>');	
+		if(int == 0){
+			$("#SessionListBar").append('<li><a class="ui-btn-active" onclick="changeDay(\'' + day.getId() + '\');">' + day.getLabelDe() + '</a></li>');
+		}else{
+			$("#SessionListBar").append('<li><a onclick="changeDay(\'' + day.getId() + '\');">' + day.getLabelDe() + '</a></li>');	
+		}
 	}
 	
 	// Seiten das Menu appenden!
@@ -18,6 +22,27 @@ function extendPages(){
 function addMenu(body, id) {
 	$(body).append('<div data-role="panel" id="'+ id + '" data-position="left" data-display="overlay" ><h3>Menü</h3><ul data-role="listview" data-inset="true" style="min-width: 210px;"><li><a href="#dashboardPage">Dashboard</a></li><li><a href="#sessionListPage">Sessionplan</a></li><li><a href="#speakerListPage">Speakerübersicht</a></li></ul><br/><a data-rel="close" class="ui-btn">schließen</a></div>');
 }
+
+function getSessionsByDay(day) {
+	var ergArray = new Array();
+	
+	// Session des Tages bestimmen
+	for (var int = 0; int < konfModel.getSessionArray().length; int++) {
+		var session = konfModel.getSessionArray()[int];
+		
+		if(session.getDayObj() != null){
+			if(session.getDayObj().getId() == day.getId()){
+				ergArray.push(session);			
+			}
+		}
+	}
+	
+	// zeitlich sortieren
+	ergArray.sort(SortSession);
+	
+	return ergArray;
+}
+
 
 function genLinkList(listView, linkArray) {
 	// liste erstmal reseten
@@ -99,6 +124,13 @@ function genSessionList(listView, sessionArray) {
 
 
 // Seitenspezifisch
+$(document).on("pagecreate", "#sessionListPage", function(event){
+	// Das erste Mal
+	// immer den ersten Tag im Array nehmen!
+	var sessionArray = getSessionsByDay(konfModel.getDayArray()[0]);
+	genSessionList($("#sessionListView"), sessionArray);
+});
+
 
 $(document).on("pagecreate", "#speakerListPage", function(event){
 	var speakerArray = konfModel.getSpeakerArray();
@@ -121,9 +153,22 @@ $(document).on("pagecreate", "#speakerListPage", function(event){
     $("#speakerListView").listview( "refresh" );
 });
 
-$(document).on("pagehide", "#speakerListPage", function(event){
-	// notfalls cleanen
-});
+function changeDay(ident) {
+	// Speaker suchen
+	var day = null;
+	
+	for (var int = 0; int < konfModel.getDayArray().length; int++) {
+		day = konfModel.getDayArray()[int];
+		if(day.getId() == ident){
+			// richtiger Tag gefunden oder den Letzten!
+			break;
+		}
+	}
+	
+	var sessionArray = getSessionsByDay(day);
+	genSessionList($("#sessionListView"), sessionArray);	
+}
+
 
 function goToSpeakerDetail(ident) {
 	// Speaker suchen

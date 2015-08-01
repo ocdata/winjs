@@ -595,22 +595,5 @@ function SortSession(a, b){
 	return 0;
 }
 
-function getSessionsByDay(day) {
-	var ergArray = new Array();
-	
-	// Session des Tages bestimmen
-	for (var int = 0; int < konfModel.getSessionArray().length; int++) {
-		var session = konfModel.getSessionArray()[int];
-		
-		if(test.getDayObj().getId() == day.getId()){
-			ergArray.push(session);			
-		}
-	}
-	
-	// zeitlich sortieren
-	ergArray.sort(SortSession);
-	
-	return ergArray;
-}
 
 
