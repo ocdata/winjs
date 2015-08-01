@@ -15,12 +15,14 @@ function extendPages(){
 	addMenu($("#sessionDetailPage"), "sessionDetailPM");
 	addMenu($("#speakerListPage"), "speakerListPM");
 	addMenu($("#speakerDetailPage"), "speakerDetailPM");
-	
-	
+	addMenu($("#kontaktPage"), "kontaktPM");
+	addMenu($("#newsPage"), "newsPM");
+	addMenu($("#datenschutzPage"), "datenschutzPM");
+	addMenu($("#impressumPage"), "impressumPM");
 }
 
 function addMenu(body, id) {
-	$(body).append('<div data-role="panel" id="'+ id + '" data-position="left" data-display="overlay" ><h3>Menü</h3><ul data-role="listview" data-inset="true" style="min-width: 210px;"><li><a href="#dashboardPage">Dashboard</a></li><li><a href="#sessionListPage">Sessionplan</a></li><li><a href="#speakerListPage">Speakerübersicht</a></li></ul><br/><a data-rel="close" class="ui-btn">schließen</a></div>');
+	$(body).append('<div data-role="panel" id="'+ id + '" data-position="left" data-display="overlay" ><h3>Menü</h3><ul data-role="listview" data-inset="true" style="min-width: 210px;"><li><a href="#dashboardPage">Dashboard</a></li><li><a href="#sessionListPage">Sessionplan</a></li><li><a href="#speakerListPage">Speakerübersicht</a></li><li><a href="#newsPage">News</a></li><li><a href="#kontaktPage">Kontakt</a></li><li><a href="#datenschutzPage">Datenschutzerklärung</a></li><li><a href="#impressumPage">Impressum</a></li></ul><br/><a data-rel="close" class="ui-btn">schließen</a></div>');
 }
 
 function getSessionsByDay(day) {
