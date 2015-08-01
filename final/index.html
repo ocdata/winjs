@@ -231,13 +231,80 @@
 									Impressum
 							</a>
 						</div>
+						<div class="ui-block-a">
+							<!-- Kontakt-->
+							<a href="#kontaktPage" class="ui-btn" data-theme="c">
+									<span class="fa fa-envelope fa-3x"></span>
+									<br />
+									<br />
+									Kontakt
+							</a>
+						</div>
+						<div class="ui-block-b">
+							<!-- Datenschutz-->
+							<a href="#datenschutzPage" class="ui-btn" data-theme="c">
+									<span class="fa fa-check-square fa-3x"></span>
+									<br />
+									<br />
+									Datenschutzerklärung
+							</a>
+						</div>
+						<div class="ui-block-c">
+							<!-- Impressum-->
+							<a href="#impressumPage" class="ui-btn" data-theme="c">
+									<span class="fa fa-registered fa-3x"></span>
+									<br />
+									<br />
+									Impressum
+							</a>
+						</div>
 					</div>
-					<!-- /grid-b -->
 				</div>
 			</div>
 		</div>
 	</div>
-	
+
+	<div data-role="page" id="kontaktPage">
+		<div data-role="header">
+			<h1>Kontaktformular</h1>
+			<a href="#kontaktPM" data-icon="bars" class="ui-btn-left">Menü</a>
+		</div>
+
+
+		<div role="main" class="ui-content">
+			<div class="ui-grid-a ui-responsive">
+				<!-- Name -->
+				<div class="ui-block-a">
+					<p>Name</p>
+				</div>
+				<!-- Name - Input -->
+				<div class="ui-block-b">
+					<input type="text" class="textfield" />
+				</div>
+				<!-- Mail -->
+				<div class="ui-block-a">
+					<p>E-mail</p>
+				</div>
+				<!-- Mail - Input -->
+				<div class="ui-block-b">
+					<!-- Email -->
+					<input type="text" class="textfield" />
+				</div>
+				<!-- Nachricht -->
+				<div class="ui-block-a">
+					<p>Nachricht</p>
+				</div>
+				<!-- Nachricht - Input -->
+				<div class="ui-block-b">
+					<textarea cols="45" rows="5"></textarea>
+				</div>
+			</div>
+			<div class="ui-grid-solo">
+				<a onclick="alert('Nachricht wurde versendet!')" class="ui-btn">Senden</a>
+			</div>
+		</div>
+	</div>
+
 	<div data-role="page" id="impressumPage">
 		<div data-role="header">
 			<h1>Impressum</h1>
