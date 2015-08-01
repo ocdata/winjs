@@ -60,3 +60,7 @@ div.speakLocation {
 .ui-listview-inset>li.ui-li-has-alt>.ui-btn+.ui-btn {
     border-radius: 0 !important;
 }
+
+p.fa {
+    font-size: 50px;
+}
