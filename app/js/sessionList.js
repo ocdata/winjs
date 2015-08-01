@@ -1,4 +1,7 @@
 function genSessions(){
+    var numOfSessionsWithSameBeginning = 0;
+    var lastBegin = null;
+
 //array durchlaufen listview mit den links populieren.
 $.each(demoSessionArray, function (index, sessionArrayValue) { //demolinkarray aus stub.js
 
@@ -16,7 +19,6 @@ $.each(demoSessionArray, function (index, sessionArrayValue) { //demolinkarray a
 
     var vonBis = begin + ' - ' + end;
 
-
     var speakerString = "";
     $.each(speakerArray, function (index, speakerArrayValue) {
         speakerString += speakerArrayValue.getName() + ", ";
@@ -27,7 +29,20 @@ $.each(demoSessionArray, function (index, sessionArrayValue) { //demolinkarray a
 
     var sessionPageLink = id + title;
     sessionPageLink = onlyNumbersAndLetters(sessionPageLink);
-    
+
+    //nur den nächsten Array Eintrag prüfen, wenn noch nicht am Ende des Arrays
+    if(demoSessionArray.length > index+1){
+        var nextBegin =  demoSessionArray[index+1].getBegin();
+        nextBegin = moment(nextBegin).format("HH:mm");
+        //wenn 2 darauffolgende Termine gleiche Anfangszeit haben. Und lastBegin null ist, d.h. noch kein divider gesetzt wurde. Setze einen Divider
+        if(begin == nextBegin && lastBegin != begin){
+            $("#sessionListView").append('<li data-role="list-divider">ab ' + begin + 'Uhr</li> ');
+        }
+        //wenn 2 aufeinanderfolgende Termine verschieden sind. Such dir die nächste 2 gleichen.
+
+        lastBegin = begin;
+    }
+
     //listview population
     $("#sessionListView").append('<li>' +
         '<a href="#' + sessionPageLink + '" class="">' +
