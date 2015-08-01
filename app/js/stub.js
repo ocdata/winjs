@@ -24,13 +24,7 @@ var speaker2 = new Speaker("speaker-2", "Sabine Mustermann", "https://taeglichne
 var demoSpeakerArray = new Array();
 demoSpeakerArray.push(speaker1);
 demoSpeakerArray.push(speaker2);
-demoSpeakerArray.push(speaker2);
-demoSpeakerArray.push(speaker2);
-demoSpeakerArray.push(speaker2);
-demoSpeakerArray.push(speaker2);
-demoSpeakerArray.push(speaker2);
-demoSpeakerArray.push(speaker2);
-demoSpeakerArray.push(speaker2);
+
 
 var link1 = new Link("https://twitter.com/SpartaTeam", "Twitter", "twitter", "", "SpartaTeam");
 var link2 = new Link("https://ocdata.github.io/", "Homepage", "web", "", "");
