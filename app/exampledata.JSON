@@ -1,0 +1,740 @@
+{
+    "speakers": [
+        {
+            "id": "rp15-speaker-5552",
+            "name": "Alexander Gräsel",
+            "photo": "https://re-publica.de/sites/re-publica.de/files/styles/speaker_profile/public/media/pictures/ich_-_kopie.jpg",
+            "url": "https://re-publica.de/member/5552#profile-speaker",
+            "biography": "Willkommen, Welcome, Velkommen, Bienvenue, Benvenuti, Bienvenido! Mein Name ist Alexander Gräsel und ich bin Projektleiter / Softwareentwickler bei einer Versicherung in Wiesbaden (Hessen). Nebenberuflich studiere ich den Master of Science der Fachrichtung Wirtschaftsinformatik und seit 2009 programmiere/blogge ich unter dem Pseudonym 'AxxG'. Dabei beschäftige ich mich primär mit der Softwareentwicklung in Java, Java EE und C/C++. Zusätzlich befasse ich mich mit (Web)Design, Fotografie, Garnelenzucht und natürlich Android:)",
+            "organization": "AxxG",
+            "organization_url": "http://blog.axxg.de/",
+            "position": "Projektleiter / Softwareentwickler",
+            "sessions": [],
+            "links": [
+                {
+                    "url": "http://blog.axxg.de/",
+                    "title": "Blog",
+                    "service": "web",
+                    "type": "speaker-link"
+                },
+                {
+                    "url": "http://www.axxg.de",
+                    "title": "Webseite",
+                    "service": "web",
+                    "type": "speaker-link"
+                },
+                {
+                    "url": "https://play.google.com/store/apps/developer?id=AxxG&hl=de",
+                    "title": "Android-Apps",
+                    "service": "web",
+                    "type": "speaker-link"
+                },
+                {
+                    "url": "http://twitter.com/axxgblog",
+                    "title": "Twitter @axxgblog",
+                    "service": "twitter",
+                    "type": "speaker-link",
+                    "username": "axxgblog"
+                }
+            ],
+            "event": "rp15",
+            "type": "speaker",
+            "last_modified": 1430930440.866
+        },
+        {
+            "id": "rp15-speaker-2613",
+            "name": "Thomas Kollbach",
+            "photo": "https://re-publica.de/sites/re-publica.de/files/styles/speaker_profile/public/media/pictures/toto_nxtbgthng_square_480.jpg",
+            "url": "https://re-publica.de/member/2613#profile-speaker",
+            "biography": "Software developer by day, hacker at heart Thomas 'toto' Kollbach is a co-founder of nxtbgthng, a mobile software development studio focused building on high-quality mobile apps.",
+            "organization": "nxtbgthng GmbH",
+            "organization_url": "https://nxtbgthng.com",
+            "position": "Co-Founder",
+            "sessions": [],
+            "links": [
+                {
+                    "url": "https://twitter.com/mrtoto",
+                    "title": "Twitter",
+                    "service": "twitter",
+                    "type": "speaker-link",
+                    "username": "mrtoto"
+                },
+                {
+                    "url": "https://thomas.kolba.ch",
+                    "title": "Homepage",
+                    "service": "web",
+                    "type": "speaker-link"
+                },
+                {
+                    "url": "https://alpha.app.net/mrtoto",
+                    "title": "App.net",
+                    "service": "web",
+                    "type": "speaker-link"
+                }
+            ],
+            "event": "rp15",
+            "type": "speaker",
+            "last_modified": 1430930440.866
+        }
+    ],
+    "locations": [
+        {
+            "id": "rp15-location-5930",
+            "label_de": "Alte Mensa",
+            "label_en": "Old mensa",
+            "order_index": 2,
+            "type": "location",
+            "event": "rp15",
+            "is_stage": false,
+            "last_modified": 1430930440.866
+        }
+    ],
+    "sessions": [
+        {
+            "id": "rp15-session-5838",
+            "title": "Checkin",
+            "abstract": "",
+            "description": "",
+            "url": "http://www.hackathon-rhein-main.de/",
+            "begin": "2015-07-30T18:30:00.000Z",
+            "end": "2015-07-30T19:00:00.000Z",
+            "duration": 1800,
+            "day": {
+                "id": "rp15-day-1",
+                "label_de": "30. Juli",
+                "label_en": "July 30",
+                "date": "2015-07-30"
+            },
+            "location": {
+                "id": "rp15-location-5930",
+                "label_en": "Alte Mensa",
+                "label_de": "Old mensa"
+            },
+            "track": {
+                "id": "introduction",
+                "label_de": "Einführung",
+                "label_en": "Introduction",
+                "color": [
+                    0,
+                    200,
+                    255,
+                    1
+                ]
+            },
+            "format": {
+                "id": "introduction",
+                "label_de": "Einführung",
+                "label_en": "Introduction"
+            },
+            "level": {
+                "id": "beginner",
+                "label_de": "Anfänger",
+                "label_en": "Beginner"
+            },
+            "lang": {
+                "id": "de+en",
+                "label_de": "Deutsch/Englisch",
+                "label_en": "German/English"
+            },
+            "speakers": [
+                {
+                    "id": "rp15-speaker-5552",
+                    "name": "Alexander Gräsel"
+                },
+                {
+                    "id": "rp15-speaker-2613",
+                    "name": "Thomas Kollbach"
+                }
+            ],
+            "enclosures": [],
+            "links": [],
+            "event": "rp15",
+            "type": "session",
+            "last_modified": 1430930440.866
+        },
+        {
+            "id": "rp15-session-5839",
+            "title": "Eröffnung/Opening",
+            "abstract": "Eröffnung Hackathon, Grußworte Wirtschaftsdezernent Christopher Sitte, Vorstellung IBM Bluemix, Projektpitches & Voting, Teambuilding",
+            "description": "",
+            "url": "http://www.hackathon-rhein-main.de/",
+            "begin": "2015-07-30T19:00:00.000Z",
+            "end": "2015-07-30T21:00:00.000Z",
+            "duration": 7200,
+            "day": {
+                "id": "rp15-day-1",
+                "label_de": "30. Juli",
+                "label_en": "July 30",
+                "date": "2015-07-30"
+            },
+            "location": {
+                "id": "rp15-location-5930",
+                "label_en": "Alte Mensa",
+                "label_de": "Old mensa"
+            },
+            "track": {
+                "id": "introduction",
+                "label_de": "Einführung",
+                "label_en": "Introduction",
+                "color": [
+                    0,
+                    200,
+                    255,
+                    1
+                ]
+            },
+            "format": {
+                "id": "introduction",
+                "label_de": "Einführung",
+                "label_en": "Introduction"
+            },
+            "level": {
+                "id": "beginner",
+                "label_de": "Anfänger",
+                "label_en": "Beginner"
+            },
+            "lang": {
+                "id": "de+en",
+                "label_de": "Deutsch/Englisch",
+                "label_en": "German/English"
+            },
+            "speakers": [
+                {
+                    "id": "rp15-speaker-5552",
+                    "name": "Alexander Gräsel"
+                },
+                {
+                    "id": "rp15-speaker-2613",
+                    "name": "Thomas Kollbach"
+                }
+            ],
+            "enclosures": [],
+            "links": [],
+            "event": "rp15",
+            "type": "session",
+            "last_modified": 1430930440.866
+        },
+        {
+            "id": "rp15-session-5840",
+            "title": "Brainstorming, Meet&Greet, Networking",
+            "abstract": "",
+            "description": "",
+            "url": "http://www.hackathon-rhein-main.de/",
+            "begin": "2015-07-30T21:00:00.000Z",
+            "end": "2015-07-31T8:00:00.000Z",
+            "duration": 39600,
+            "day": {
+                "id": "rp15-day-1",
+                "label_de": "30. Juli",
+                "label_en": "July 30",
+                "date": "2015-07-30"
+            },
+            "location": {
+                "id": "rp15-location-5930",
+                "label_en": "Alte Mensa",
+                "label_de": "Old mensa"
+            },
+            "track": {
+                "id": "programming",
+                "label_de": "Programmieren",
+                "label_en": "Programming",
+                "color": [
+                    255,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "format": {
+                "id": "programming",
+                "label_de": "Programmieren",
+                "label_en": "Programming"
+            },
+            "level": {
+                "id": "intermediate",
+                "label_de": "Fortgeschrittene",
+                "label_en": "Intermediate"
+            },
+            "lang": {
+                "id": "de+en",
+                "label_de": "Deutsch/Englisch",
+                "label_en": "German/English"
+            },
+            "speakers": [
+                {
+                    "id": "rp15-speaker-5552",
+                    "name": "Alexander Gräsel"
+                }
+            ],
+            "enclosures": [],
+            "links": [],
+            "event": "rp15",
+            "type": "session",
+            "last_modified": 1430930440.866
+        },
+        {
+            "id": "rp15-session-5841",
+            "title": "Frühstück/Breakfast",
+            "abstract": "",
+            "description": "",
+            "url": "http://www.hackathon-rhein-main.de/",
+            "begin": "2015-07-31T8:00:00.000Z",
+            "end": "2015-07-31T9:00:00.000Z",
+            "duration": 3600,
+            "day": {
+                "id": "rp15-day-2",
+                "label_de": "31. Juli",
+                "label_en": "July 31",
+                "date": "2015-07-31"
+            },
+            "location": {
+                "id": "rp15-location-5930",
+                "label_en": "Alte Mensa",
+                "label_de": "Old mensa"
+            },
+            "track": {
+                "id": "meal",
+                "label_de": "Essen",
+                "label_en": "Meal",
+                "color": [
+                    0,
+                    255,
+                    0,
+                    1
+                ]
+            },
+            "format": {
+                "id": "meal",
+                "label_de": "Essen",
+                "label_en": "Meal"
+            },
+            "level": {
+                "id": "beginner",
+                "label_de": "Anfänger",
+                "label_en": "Beginner"
+            },
+            "lang": {
+                "id": "de+en",
+                "label_de": "Deutsch/Englisch",
+                "label_en": "German/English"
+            },
+            "speakers": [
+                {
+                    "id": "rp15-speaker-5552",
+                    "name": "Alexander Gräsel"
+                },
+                {
+                    "id": "rp15-speaker-2613",
+                    "name": "Thomas Kollbach"
+                }
+            ],
+            "enclosures": [],
+            "links": [],
+            "event": "rp15",
+            "type": "session",
+            "last_modified": 1430930440.866
+        },
+        {
+            "id": "rp15-session-5842",
+            "title": "Kickoff",
+            "abstract": "Presentation",
+            "description": "UDG United digital Group",
+            "url": "http://www.hackathon-rhein-main.de/",
+            "begin": "2015-07-31T9:00:00.000Z",
+            "end": "2015-07-31T11:00:00.000Z",
+            "duration": 7200,
+            "day": {
+                "id": "rp15-day-2",
+                "label_de": "31. Juli",
+                "label_en": "July 31",
+                "date": "2015-07-31"
+            },
+            "location": {
+                "id": "rp15-location-5930",
+                "label_en": "Alte Mensa",
+                "label_de": "Old mensa"
+            },
+            "track": {
+                "id": "presentation",
+                "label_de": "Präsentation",
+                "label_en": "Presentation",
+                "color": [
+                    255,
+                    150,
+                    0,
+                    1
+                ]
+            },
+            "format": {
+                "id": "presentation",
+                "label_de": "Präsentation",
+                "label_en": "Presentation"
+            },
+            "level": {
+                "id": "intermediate",
+                "label_de": "Fortgeschrittene",
+                "label_en": "Intermediate"
+            },
+            "lang": {
+                "id": "de+en",
+                "label_de": "Deutsch/Englisch",
+                "label_en": "German/English"
+            },
+            "speakers": [
+                {
+                    "id": "rp15-speaker-5552",
+                    "name": "Alexander Gräsel"
+                },
+                {
+                    "id": "rp15-speaker-2613",
+                    "name": "Thomas Kollbach"
+                }
+            ],
+            "enclosures": [],
+            "links": [],
+            "event": "rp15",
+            "type": "session",
+            "last_modified": 1430930440.866
+        },
+        {
+            "id": "rp15-session-5843",
+            "title": "Innovation Workshop by Deutsche Bank",
+            "abstract": "",
+            "description": "",
+            "url": "http://www.hackathon-rhein-main.de/",
+            "begin": "2015-07-31T9:00:00.000Z",
+            "end": "2015-07-31T11:00:00.000Z",
+            "duration": 7200,
+            "day": {
+                "id": "rp15-day-2",
+                "label_de": "31. Juli",
+                "label_en": "July 31",
+                "date": "2015-07-31"
+            },
+            "location": {
+                "id": "rp15-location-5930",
+                "label_en": "Alte Mensa",
+                "label_de": "Old mensa"
+            },
+            "track": {
+                "id": "presentation",
+                "label_de": "Präsentation",
+                "label_en": "Presentation",
+                "color": [
+                    255,
+                    150,
+                    0,
+                    1
+                ]
+            },
+            "format": {
+                "id": "presentation",
+                "label_de": "Präsentation",
+                "label_en": "Presentation"
+            },
+            "level": {
+                "id": "intermediate",
+                "label_de": "Fortgeschrittene",
+                "label_en": "Intermediate"
+            },
+            "lang": {
+                "id": "de+en",
+                "label_de": "Deutsch/Englisch",
+                "label_en": "German/English"
+            },
+            "speakers": [
+                {
+                    "id": "rp15-speaker-5552",
+                    "name": "Alexander Gräsel"
+                },
+                {
+                    "id": "rp15-speaker-2613",
+                    "name": "Thomas Kollbach"
+                }
+            ],
+            "enclosures": [],
+            "links": [],
+            "event": "rp15",
+            "type": "session",
+            "last_modified": 1430930440.866
+        }
+    ],
+    "tracks": [
+        {
+            "id": "introduction",
+            "label_de": "Einführung",
+            "label_en": "Introduction",
+            "color": [
+                0,
+                200,
+                255,
+                1
+            ],
+            "event": "rp15",
+            "type": "track",
+            "last_modified": 1430930440.866
+        },
+        {
+            "id": "meal",
+            "label_de": "Essen",
+            "label_en": "Meal",
+            "color": [
+                0,
+                255,
+                0,
+                1
+            ],
+            "event": "rp15",
+            "type": "track",
+            "last_modified": 1430930440.866
+        },
+        {
+            "id": "presentation",
+            "label_de": "Präsentation",
+            "label_en": "Presentation",
+            "color": [
+                255,
+                150,
+                0,
+                1
+            ],
+            "event": "rp15",
+            "type": "track",
+            "last_modified": 1430930440.866
+        },
+        {
+            "id": "programming",
+            "label_de": "Programmieren",
+            "label_en": "Programming",
+            "color": [
+                255,
+                0,
+                0,
+                1
+            ],
+            "event": "rp15",
+            "type": "track",
+            "last_modified": 1430930440.866
+        }
+    ],
+    "formats": [
+        {
+            "id": "introduction",
+            "label_de": "Einführung",
+            "label_en": "Introduction",
+            "event": "rp15",
+            "type": "format",
+            "last_modified": 1430930440.866
+        },
+        {
+            "id": "meal",
+            "label_de": "Essen",
+            "label_en": "Meal",
+            "event": "rp15",
+            "type": "format",
+            "last_modified": 1430930440.866
+        },
+        {
+            "id": "presentation",
+            "label_de": "Präsentation",
+            "label_en": "Presentation",
+            "event": "rp15",
+            "type": "format",
+            "last_modified": 1430930440.866
+        },
+        {
+            "id": "programming",
+            "label_de": "Programmieren",
+            "label_en": "Programming",
+            "event": "rp15",
+            "type": "format",
+            "last_modified": 1430930440.866
+        }
+    ],
+    "levels": [
+        {
+            "id": "advanced",
+            "label_de": "Experten",
+            "label_en": "Advanced",
+            "event": "rp15",
+            "type": "level",
+            "last_modified": 1430930440.866
+        },
+        {
+            "id": "beginner",
+            "label_de": "Anfänger",
+            "label_en": "Beginner",
+            "event": "rp15",
+            "type": "level",
+            "last_modified": 1430930440.866
+        },
+        {
+            "id": "intermediate",
+            "label_de": "Fortgeschrittene",
+            "label_en": "Intermediate",
+            "event": "rp15",
+            "type": "level",
+            "last_modified": 1430930440.866
+        }
+    ],
+    "languages": [
+        {
+            "id": "de",
+            "label_de": "Deutsch",
+            "label_en": "German",
+            "event": "rp15",
+            "type": "language",
+            "last_modified": 1430930440.866
+        },
+        {
+            "id": "de+en",
+            "label_de": "Deutsch/Englisch",
+            "label_en": "German/English",
+            "event": "rp15",
+            "type": "language",
+            "last_modified": 1430930440.866
+        },
+        {
+            "id": "en",
+            "label_de": "Englisch",
+            "label_en": "English",
+            "event": "rp15",
+            "type": "language",
+            "last_modified": 1430930440.866
+        }
+    ],
+    "days": [
+        {
+            "id": "rp15-day-1",
+            "label_de": "30. Juli",
+            "label_en": "July 30",
+            "date": "2015-07-30",
+            "event": "rp15",
+            "type": "day",
+            "last_modified": 1430930440.866
+        },
+        {
+            "id": "rp15-day-2",
+            "label_de": "31. Juli",
+            "label_en": "July 31",
+            "date": "2015-07-31",
+            "event": "rp15",
+            "type": "day",
+            "last_modified": 1430930440.866
+        },
+        {
+            "id": "rp15-day-3",
+            "label_de": "1. August",
+            "label_en": "August 1",
+            "date": "2015-08-01",
+            "event": "rp15",
+            "type": "day",
+            "last_modified": 1430930440.866
+        }
+    ],
+    "maps": [
+        {
+            "event": "rp15",
+            "id": "rp15-map-level0",
+            "type": "map",
+            "label_de": "Station Berlin",
+            "label_en": "Station Berlin",
+            "floor_label_de": "Station Berlin",
+            "floor_label_en": "Station Berlin",
+            "is_outdoor": true,
+            "is_indoor": true,
+            "floor": 0,
+            "order_index": 0,
+            "area": {
+                "width": 7872,
+                "height": 2814
+            },
+            "tiles": {
+                "base_url": "http://data.conference.bits.io/maps/rp15/station-berlin",
+                "large_image_url": "http://data.conference.bits.io/maps/rp15/station-berlin/mini.png",
+                "tile_size": 512,
+                "tile_file_extension": "png",
+                "size": {
+                    "width": 7872,
+                    "height": 2814
+                }
+            },
+            "pois": [],
+            "last_modified": 1430930440.866
+        }
+    ],
+    "pois": [
+        {
+            "id": "rp15-pointofinterest-stage1",
+            "type": "poi",
+            "label_en": "STG-1",
+            "label_de": "STG-1",
+            "category": "session-location",
+            "positions": [
+                {
+                    "map": "rp15-map-level0",
+                    "x": 1536,
+                    "y": 918
+                }
+            ],
+            "hidden": false,
+            "priority": 1000,
+            "beacons": [],
+            "location": {
+                "id": "rp15-location-5591",
+                "label_de": "STG-1",
+                "label_en": "STG-1"
+            },
+            "event": "rp15",
+            "last_modified": 1430930440.866
+        },
+        {
+            "id": "rp15-pointofinterest-stage2",
+            "type": "poi",
+            "label_en": "STG-2",
+            "label_de": "STG-2",
+            "category": "session-location",
+            "positions": [
+                {
+                    "map": "rp15-map-level0",
+                    "x": 342,
+                    "y": 454
+                }
+            ],
+            "hidden": false,
+            "priority": 1000,
+            "beacons": [],
+            "location": {
+                "id": "rp15-location-5929",
+                "label_de": "STG-2",
+                "label_en": "STG-2"
+            },
+            "event": "rp15",
+            "last_modified": 1430930440.866
+        },
+        {
+            "id": "rp15-pointofinterest-stage3",
+            "type": "poi",
+            "label_en": "STG-3",
+            "label_de": "STG-3",
+            "category": "session-location",
+            "positions": [
+                {
+                    "map": "rp15-map-level0",
+                    "x": 730,
+                    "y": 1150
+                }
+            ],
+            "hidden": false,
+            "priority": 1000,
+            "beacons": [],
+            "location": {
+                "id": "rp15-location-5930",
+                "label_de": "STG-3",
+                "label_en": "STG-3"
+            },
+            "event": "rp15",
+            "last_modified": 1430930440.866
+        }
+    ]
+}
