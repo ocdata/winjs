@@ -217,21 +217,6 @@ function Speaker(id, name, photo, url, biography, organization, organizationUrl,
     this.getLinkArray = function () {
         return this.linkArray;
     }
-
-		this.getTwitterUsername = function() {
-		  var links = this.getLinkArray();
-		  if (!links)
-		    return null;
-		  $.each(links, function(key, link) {
-		      if (!link)
-		        return;
-		      var service = link.getService();
-		      if (service !== "twitter")
-		        return;
-		      return link.getUsername();
-			  });
-			return null;
-		}
 }
 
 function Level(id, labelDe, labelEn) {

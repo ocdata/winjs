@@ -53,3 +53,8 @@ div.sessionLocation {
 		float: none;
 	}
 }
+
+#speakerDetailTwitter iframe {
+            margin: 0 auto auto !important;
+            display: block !important;
+}
