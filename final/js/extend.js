@@ -279,8 +279,10 @@ function goToSessionDetail(ident) {
 		genLinkList($("#sessionDetailLinkListView"), session.getLinkArray());
 	}
 	
-	//slidershare
+	// etherpad
+	$('#sessionDetailetherpad').html(" <iframe name='embed_readwrite' src='https://piratenpad.de/p/BnXFfh1mxgox8fvlelrls?showControls=true&showChat=true&showLineNumbers=true&useMonospaceFont=false' width='100%' height='400px'></iframe>");
 	
+	//slidershare
 	session.setSliderShareKey("oVTBqK6ZNhLBZy");
 	
 	if(session.getSliderShareKey() == ""){
@@ -288,10 +290,10 @@ function goToSessionDetail(ident) {
 	}else{
 		$("#sessionDetailSliderShareCon").show();
 		$('#sessionDetailSliderShare').html('<iframe id="slideshare" src="https://de.slideshare.net/slideshow/embed_code/key/' + session.getSliderShareKey() +
-				'"height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen/>');
+				'"width="599" height="487" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen/>');
 	}
-	;
-}
+	
+
 
 	
 	

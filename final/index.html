@@ -119,12 +119,19 @@
 			<br />
 			<div class="ui-body ui-body-a">
 				<h4>gemeinschatliche Notizen</h4>
-				 <iframe name='embed_readwrite' src='https://piratenpad.de/p/BnXFfh1mxgox8fvlelrls?showControls=true&showChat=true&showLineNumbers=true&useMonospaceFont=false' width="100%" height="400px"></iframe>
+				<!-- Leider noch nicht dynamisch, weil Bluemix nicht ging:-( -->
+				<p id="sessionDetailetherpad" style="text-align:center;" />
+			</div>
+			<br />
+			<div class="ui-body ui-body-a">
+				<h4>private Notizen</h4>
+				 <textarea rows="10"></textarea>
+				 <button class="ui-btn" onclick="alert('leider noch nicht implementiert!')">speichern</button>
 			</div>
 			<br />
 			<div class="ui-body ui-body-a" id="sessionDetailSliderShareCon">
 				<h4>Präsentation</h4>
-				 <ul id="sessionDetailLinkListView" data-role="listview" data-split-icon="gear" data-split-theme="b" data-inset="true"></ul>
+				 <p id="sessionDetailSliderShare" style="text-align:center;" />
 			</div>			
 
 
