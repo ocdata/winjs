@@ -24,6 +24,16 @@
 }
 
 
+.ui-icon-gear::after {
+    background-image: none;
+    content: "\f08a";
+    font-family: FontAwesome;
+    font-size: 16.6px;
+    position: absolute;
+    text-align: center;
+    text-indent: 0;
+}
+
 div.speakerPhoto {
     background-position: center center;
     background-repeat: no-repeat;

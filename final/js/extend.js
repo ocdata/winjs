@@ -58,13 +58,17 @@ function genSpeakerList(listView, speakerArray, withDelete) {
         var speakerPosition = speaker.getPosition();
         var speakerPhoto = speaker.getPhoto();
 
+        var speakerLink = speakerId + speakerName;
+        speakerLink = onlyNumbersAndLetters(speakerLink);
+
         //ListView population
         listView.append('<li>' +
             '<a onclick="goToSpeakerDetail(\'' + speakerId + '\');">' +
             '<div style="background-image: url(' + speakerPhoto + ')" class="speakerPhoto"></div>' +
             '<div class="speakerText">'+ speakerName + ' (' + speakerPosition + ')<br />' + speakerFirma + '</div>' +
             '</a>' +
-            '<a></a></li>'); 
+            '<a href="#fav" id="'+ speakerLink +'" class="fav ' + speakerLink+ '" data-theme="c"></a></li>');
+
     });
 	 
 	 try {
@@ -104,7 +108,7 @@ function genSessionList(listView, sessionArray) {
 	// liste erstmal reseten
 	listView.empty();
 	
-	$.each(sessionArray, function (index, session) { 
+	$.each(sessionArray, function (index, session) {
 
 	    var ident = session.getId();
 	    var title = session.getTitle();
@@ -128,6 +132,21 @@ function genSessionList(listView, sessionArray) {
 	    //letztes Komma abschneiden
 	    speakerString = speakerString.substr(0, speakerString.length - 2);
 
+        var sessionPageLink = ident + title;
+        sessionPageLink = onlyNumbersAndLetters(sessionPageLink);
+
+        //nur den nächsten Array Eintrag prüfen, wenn noch nicht am Ende des Arrays
+        if(sessionArray.length > index+1){
+            var nextBegin =  sessionArray[index+1].getBegin();
+            nextBegin = moment(nextBegin).format("HH:mm");
+            //wenn 2 darauffolgende Termine gleiche Anfangszeit haben. Und lastBegin null ist, d.h. noch kein divider gesetzt wurde. Setze einen Divider
+            if(begin == nextBegin && lastBegin != begin){
+                listView.append('<li data-role="list-divider">ab ' + begin + 'Uhr</li> ');
+            }
+            //wenn 2 aufeinanderfolgende Termine verschieden sind. Such dir die nächste 2 gleichen.
+
+            lastBegin = begin;
+        }
 	    
 	    //listview population
 	    listView.append('<li>' +
@@ -140,17 +159,17 @@ function genSessionList(listView, sessionArray) {
 	        '<div>' + vonBis +'</div>' +
 	        '<div class="sessionLocation">Ort: ' + speakLocation + '</div>' +
 	        '</a>' +
-	        '<a></a></li>');
-	});
-		 
-	 try {
-		 // Liste neuerstellen lassen
-		 listView.listview('refresh');
-	} catch (e) {
-		// TODO: handle exception
-	}
-}
+            '<a href="#fav" id="'+ sessionPageLink +'" class="fav ' + sessionPageLink+ '" data-theme="c"></a></li>');
 
+	});
+
+    try {
+        // Liste neuerstellen lassen
+        listView.listview('refresh');
+    } catch (e) {
+        // TODO: handle exception
+    }
+}
 
 // Seitenspezifisch
 $(document).on("pagecreate", "#sessionListPage", function(event){
@@ -158,6 +177,16 @@ $(document).on("pagecreate", "#sessionListPage", function(event){
 	// immer den ersten Tag im Array nehmen!
 	var sessionArray = getSessionsByDay(konfModel.getDayArray()[0]);
 	genSessionList($("#sessionListView"), sessionArray);
+
+    var nameOfFavorite = 'favoriteSessions';
+    markFavoriteWithIcon(nameOfFavorite);
+
+    $('.fav').click(function(){
+        //use HTML5 LocalStorage
+        var uniqueFavId = $(this).attr('id');
+
+        favChanged(uniqueFavId, 'favoriteSessions');
+    });
 });
 
 
@@ -165,6 +194,17 @@ $(document).on("pagecreate", "#speakerListPage", function(event){
 	var speakerArray = konfModel.getSpeakerArray();
 
 	genSpeakerList($("#speakerListView"), speakerArray, false);
+    var nameOfFavorite = 'favoritePersons';
+
+    markFavoriteWithIcon(nameOfFavorite);
+
+    $('.fav').click(function(){
+        //use HTML5 LocalStorage
+        var uniqueFavId = $(this).attr('id');
+
+        favChanged(uniqueFavId, 'favoritePersons');
+    });
+
 });
 
 function changeDay(ident) {
