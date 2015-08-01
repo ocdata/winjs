@@ -1,4 +1,12 @@
-﻿
+﻿h1.fehler {
+    font-size: 30px;
+    color:red;
+}
+
+p.fehler{
+    text-align:center;
+}
+
 .custom-corners .ui-bar {
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
@@ -61,6 +69,12 @@ div.speakLocation {
     border-radius: 0 !important;
 }
 
-p.fa {
+span.fa {
     font-size: 50px;
 }
+
+#trophy {
+    color: #ffa54f;
+    font-size: 20px;
+}
+
