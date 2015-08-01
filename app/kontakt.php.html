@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Kontakt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/default.css" />
+
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/js.cookie.js"></script>
+    <script src="js/default.js"></script>
+
+</head>
+<body>
+    <?php
+    $status = $_GET['success'];
+    ?>
+
+    <div data-role="page" id="foo">
+
+        <div data-role="header">
+            <div class="ui-bar ui-bar-b">
+                <h1>Kontaktformular</h1>
+            </div>
+        </div><!-- /header -->
+        <div class="ui-content-b">
+            <div class="ui-body ui-body-a">
+                <form method="post" action="mailer.php">
+                    <!-- Label + Input-Felder -->
+                    <div class="ui-grid-a ui-responsive">
+                        <!-- Name -->
+                        <div class="ui-block-a">
+                            <p>Name</p>
+                        </div>
+                        <!-- Name - Input -->
+                        <div class="ui-block-b">
+                            <input type="text" name="name" id="name" value="" class="textfield" />
+                        </div>
+                        <!-- Mail -->
+                        <div class="ui-block-a">
+                            <p>E-mail</p>
+                        </div>
+                        <!-- Mail - Input -->
+                        <div class="ui-block-b">
+                            <!-- Email -->
+                            <input type="text" name="mail" id="mail" value="" class="textfield" />
+                        </div>
+                        <!-- Nachricht -->
+                        <div class="ui-block-a">
+                            <p>Nachricht</p>
+                        </div>
+                        <!-- Nachricht - Input -->
+                        <div class="ui-block-b">
+                            <textarea name="nachricht" id="nachricht" cols="45" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div class="ui-grid-solo">
+                        <input type="submit" name="submit" value="Senden" class="submit" />
+                    </div>
+                    <div class="ui-grid-solo">
+                        <input type="button" name="vorschau" value="Vorschau" class="vorschau" id="vButton" />
+                    </div>
+                    <script type="text/javascript">
+                        $('#vButton').click(function () {
+                            $('#vName').text($('#name').val());
+                            $('#vMail').text($('#mail').val());
+                            $('#vNachricht').text($('#nachricht').val());
+                        });
+                    </script>
+                </form>
+            </div>
+        </div>
+        <!-- Vorschau -->
+        <div class="ui-bar ui-bar-b">
+            <h2>Vorschau</h2>
+        </div>
+        <div class="ui-body ui-body-b vorschau">
+            <div id="vLabels">
+                <p>Name: <span id="vName"></span></p>
+                <p>E-mail: <span id="vMail"></span></p>
+                <p>Nachricht: <span id="vNachricht"></span></p>
+            </div>
+        </div>
+    </div>
+    </div><!-- /page -->
+
+
+
+</body>
+</html>
