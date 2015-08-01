@@ -17,7 +17,7 @@
     font-size: 20px;
 }
 
-div.speakerString {
+.speakerString {
     font-size: 12px;
     margin-bottom: 14px;
     text-align: left;
@@ -39,6 +39,6 @@ div.speakerText {
     word-wrap: break-word;
 }
 
-div.speakLocation {
+div.sessionLocation {
     font-size: 14px;
 }
