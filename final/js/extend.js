@@ -140,9 +140,7 @@ function genSessionList(listView, sessionArray) {
 	        '</a>' +
 	        '<a></a></li>');
 	});
-	
-	
-	 
+		 
 	 try {
 		 // Liste neuerstellen lassen
 		 listView.listview('refresh');
@@ -203,11 +201,37 @@ function goToSpeakerDetail(ident) {
 	 $("#speakerDetailOrganisation").text(speaker.getOrganization());
 	 $("#speakerDetailBiografie").text(speaker.getBiography());
 	 
-	 //var test = new Speaker(id, name, photo, url, biography, organization, organizationUrl, position, linkArray);
-	 //test.getBiography()
 	 
 	 // Linkliste erzeugen
 	 genLinkList($("#speakerDetailLinkListView"), speaker.getLinkArray());
+	 
+	 // ggf Twitter aktivieren!!!
+	 // egal wie einfach reseten
+	 $("#speakerDetailTwitter").empty();
+	 $("#speakerDetailTwitter").append("<span id='speakerDetailTwitterTmp'/>");
+	 
+	 for (var int2 = 0; int2 < speaker.getLinkArray().length; int2++) {
+		var link = speaker.getLinkArray()[int2];
+		
+		if(link.getService() != "twitter"){
+			$("#speakerDetailTwitterCon").hide();
+		}else{
+			$("#speakerDetailTwitterCon").show();
+			
+            twttr.widgets.createTimeline(
+                    '627087937411354624',
+                    document.getElementById('speakerDetailTwitterTmp'), {
+                        width: 'auto',
+                        height: '700',
+                        related: 'twitterdev,twitterapi',
+                        screenName: link.getUsername()
+                    }).then(function (el) {
+                    });
+			break;
+		}
+	}
+	 
+
 	 
 	 // Sessionliste erzeugen
 	 // sonst zyklische Abhängigkeiten im Datenmodell!!!
@@ -283,7 +307,7 @@ function goToSessionDetail(ident) {
 	$('#sessionDetailetherpad').html(" <iframe name='embed_readwrite' src='https://piratenpad.de/p/BnXFfh1mxgox8fvlelrls?showControls=true&showChat=true&showLineNumbers=true&useMonospaceFont=false' width='100%' height='400px'></iframe>");
 	
 	//slidershare
-	session.setSliderShareKey("oVTBqK6ZNhLBZy");
+	session.setSliderShareKey("8bDozc1K8DdHsE");
 	
 	if(session.getSliderShareKey() == ""){
 		$("#sessionDetailSliderShareCon").hide();
@@ -292,10 +316,6 @@ function goToSessionDetail(ident) {
 		$('#sessionDetailSliderShare').html('<iframe id="slideshare" src="https://de.slideshare.net/slideshow/embed_code/key/' + session.getSliderShareKey() +
 				'"width="599" height="487" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen/>');
 	}
-	
-
-
-	
 	
 	// Seite wechseln
 	$( ":mobile-pagecontainer" ).pagecontainer( "change", $("#sessionDetailPage"));
