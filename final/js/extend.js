@@ -8,7 +8,9 @@ function extendPages(){
 	// Seiten das Menu appenden!
 	addMenu($("#dashboardPage"), "dashboardPM");
 	addMenu($("#sessionListPage"), "sessionListPM");
+	addMenu($("#sessionDetailPage"), "sessionDetailPM");
 	addMenu($("#speakerListPage"), "speakerListPM");
+	addMenu($("#speakerDetailPage"), "speakerDetailPM");
 	
 	
 }
@@ -19,8 +21,6 @@ function addMenu(body, id) {
 
 
 // Seitenspezifisch
-
-
 
 $(document).on("pagecreate", "#speakerListPage", function(event){
 	var speakerArray = konfModel.getSpeakerArray();
@@ -49,6 +49,13 @@ $(document).on("pagehide", "#speakerListPage", function(event){
 
 function goToSpeakerDetail(ident) {
 	alert(ident);	
+	$( ":mobile-pagecontainer" ).pagecontainer( "change", $("#speakerDetailPage"));
+}
+
+function goToSessionDetail(ident) {
+	// Seite wechseln
+	alert(ident);	
+	$( ":mobile-pagecontainer" ).pagecontainer( "change", $("#sessionDetailPage"));
 }
 
 
