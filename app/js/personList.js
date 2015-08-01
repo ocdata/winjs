@@ -1,25 +1,6 @@
-//Für jede Person wird eine neue Page Detailseite angelegt
-//var personArray = ["Person1", "Person2", "Person3", "Person4"];
-
-//setTimeout(function(){
-//    speakerArray = konfModel.getSpeakerArray();
-//    genSpeaker(speakerArray);
-//}, 2000);
-//
-//
-//setTimeout(function(){
-//    $("#personListView").listview( "refresh" );
-//}, 5000);
-
-var speakerArray = null;
-genSpeaker();
 function genSpeaker(){
 //    speakerArray = konfModel.getSpeakerArray();
     var speakerArray = demoSpeakerArray;
-
-//    var speaker = $( "#result" ).load( "speaker.html", function() {
-//        alert( "Load was performed." );
-//    });
 
     $.each(speakerArray, function( index, personArrayValue ) { //demoSpeakerArray aus stub.js
         var personId = personArrayValue.id;
@@ -29,14 +10,18 @@ function genSpeaker(){
         var personPhoto = personArrayValue.getPhoto();
 
         var pageLink = personId + personName;
-        pageLink = pageLink.replace(/\s+/g, '');
+        pageLink = onlyNumbersAndLetters(pageLink);
+
+//    var speaker = $( "#result" ).load( "speaker.html", function() {
+//        alert( "" );
+//    });
 
 //        $.get("speaker.html", function(data){
 //            $(this).children("body").html(data);
 //        });
 
 
-        //Detailseiten anlegen
+        //Detailseiten anlegen. Für jede Person wird eine neue Page Detailseite angelegt
         $("body").append('<div data-role="page" id="' + pageLink + '">' +
             '<div data-role="header"><h1>' + personName + ' (' + personPosition + ')</h1>' +
             '</div>');
@@ -46,9 +31,21 @@ function genSpeaker(){
             '<a href="#'+ pageLink + '" class="">' +
             '<div style="background-image: url(' + personPhoto + ')" class="personPhoto"></div>' +
             '<div class="personText">'+ personName + ' (' + personPosition + ')<br />' + personFirma + '</div>' +
-            '</a>');
-//            '<a href="#fav" id="'+ pageLink +'" class="fav ' + pageLink+ '" data-theme="c"></a></li>');
+            '</a>'+
+            '<a href="#fav" id="'+ pageLink +'" class="fav ' + pageLink+ '" data-theme="c"></a></li>');
     });
-
-    $("#personListView").listview( "refresh" );
 }
+
+var nameOfFavorite = 'favoritePersons';
+
+genSpeaker();
+
+markFavoriteWithIcon(nameOfFavorite);
+
+$('.fav').click(function(){
+    //use HTML5 LocalStorage
+    var uniqueFavId = $(this).attr('id');
+
+    favChanged(uniqueFavId, 'favoritePersons');
+});
+
