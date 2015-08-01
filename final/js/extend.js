@@ -57,6 +57,13 @@ function genSpeakerList(listView, speakerArray, withDelete) {
         var speakerFirma = speaker.getOrganization();
         var speakerPosition = speaker.getPosition();
         var speakerPhoto = speaker.getPhoto();
+        
+        var speakerTitle = "";
+        if(speakerPosition == ""){
+        	speakerTitle = speakerName;
+        }else{
+        	speakerTitle = speakerName + ' (' + speakerPosition + ')';
+        }
 
         var speakerLink = speakerId + speakerName;
         speakerLink = onlyNumbersAndLetters(speakerLink);
@@ -65,7 +72,7 @@ function genSpeakerList(listView, speakerArray, withDelete) {
         listView.append('<li>' +
             '<a onclick="goToSpeakerDetail(\'' + speakerId + '\');">' +
             '<div style="background-image: url(' + speakerPhoto + ')" class="speakerPhoto"></div>' +
-            '<div class="speakerText">'+ speakerName + ' (' + speakerPosition + ')<br />' + speakerFirma + '</div>' +
+            '<div class="speakerText">'+ speakerTitle + '<br />' + speakerFirma + '</div>' +
             '</a>' +
             '<a href="#fav" id="'+ speakerLink +'" class="fav ' + speakerLink+ '" data-theme="c"></a></li>');
 
